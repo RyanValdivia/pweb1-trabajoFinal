@@ -1,0 +1,4 @@
+TAREAS:
+- HTML, CSS, Javascript: Jhonthan, Ryan, Jefferson
+- CGI: Jefferson Anthony Alezandra
+- BASE DE DATOS: Anthony
