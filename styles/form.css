@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", "Poppins", sans-serif;
+}
+
+html, body{
+  max-width: 100vw;
+  height: 100svh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8C52FF;
+  padding: 0 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.logo img{
+  width: 86px;
+  border: 1px solid red;
+}
+
+.logotipo{
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.search-icon {
+  width: 30px;
+}
+ 
+.search-bar {
+  height: 30px;
+
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.user-image {
+  width: 50px;
+}
+
+.user-name {
+  font-size: bold;
+  font-size: 1.3rem;
+}
+
