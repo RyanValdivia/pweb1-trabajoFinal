@@ -25,7 +25,7 @@ nav {
   align-items: center;
   background-color: #8C52FF;
   padding: 0 3rem;
-  height: 80px;
+  height: 90px;
   color: #FFF;
   gap: 2rem;
 }
@@ -41,7 +41,7 @@ nav {
 }
 
 .logotipo{
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   font-weight: bold;
 }
 
@@ -55,6 +55,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex: 1;
 }
 
 .search-icon {
@@ -87,7 +88,7 @@ ul {
 
 a {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #fff;
 }
 
@@ -104,7 +105,7 @@ a {
 
 .user-name {
   font-size: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 
@@ -132,16 +133,13 @@ main {
 
 .form {
   height: 80svh;
-  background-color: #fffc;
-  gap: 2rem;
+  background-color: #fffa;
+  gap: 4.5rem;
   border-radius: 60px;
-  padding: 2rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 0 20px 10px #0003;
 }
 
-form {
-  flex: 1;
-  width: 500px;
-}
 
 .form, form {
   display: flex;
@@ -150,10 +148,16 @@ form {
   justify-content: space-evenly;
 }
 
+form {
+  flex: 1;
+  width: 500px;
+  justify-content: space-between;
+}
+
 form > input {
   height: 3.5rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 430px;
   border: none;
   border-radius: 20px;
   padding: 0 1.5rem;
@@ -173,3 +177,7 @@ form > button {
 }
 
 
+button:hover {
+  opacity: .8;
+  cursor: pointer;
+}
