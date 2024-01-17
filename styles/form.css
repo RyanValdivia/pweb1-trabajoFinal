@@ -25,7 +25,7 @@ main {
   backdrop-filter: blur(9px);
   box-shadow: 0 0 10px rgb(0 0 0 / .3);
   width: min(80vw, 400px);
-  min-height: 70vh;
+  min-height: max(70vh, 650px);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
