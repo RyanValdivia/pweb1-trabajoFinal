@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Register</title>
+    <title>Registro</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="styles/form.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link href="./styles/form.css" rel="stylesheet">
+    <script src='./js/verification.js' defer> </script>
   </head>
   <body>
-    <nav>
-      <div class="logo">
-        <span class="logotipo">Bibliobyte</span>
-        <img src="./images_icons_background/logo.png" alt="Bibliobyte logo" class="isotipo">
-      </div>
-      <div class="tool-bar">
-        <div class="search">
-          <img src="./images_icons_background/search.svg" alt="search icon" class="search-icon">
-          <input type="text" name="search" placeholder="Busca un libro..." class="search-bar">
+    <main class='main-content'>
+      <div class="signup-content">
+        <div class="disclaimer-content">
+          <img src="./images_icons_background/user-icon.png" alt="User icon">
         </div>
+<<<<<<< HEAD
         <ul class="links">
           <li><a href="#">Libros</a></li>
           <li><a href="#">Tus libros</a></li>
@@ -40,7 +38,28 @@
           <input type="password" name="password" placeholder="Contraseña" required>
           <input type="password" name="password" placeholder="Verificar contraseña" required>
           <button type="submit">CREAR CUENTA</button>
+=======
+        <form action='' method=''>
+          <div class="campos">
+            <div class="campo">
+              <input type="text" name="user" placeholder='Usuario' id='user-name' required>
+            </div>
+            <div class="campo">
+              <input type="email" name="email" placeholder="Correo Electrónico" id='user-email' autocomplete="email" required>
+            </div>
+            <div class="campo">
+              <input type="password" name="password" id='user-password' placeholder="Contraseña" autocomplete='new-password' required>
+            </div>
+            <div class="campo">
+              <input name="password" type="password" id='user-password-2' placeholder="Confirmación de Contraseña" class='confirm' data-status="invalid" autocomplete='new-password'>
+            </div>
+          </div>
+          <button type="none">CREAR CUENTA</button>
+>>>>>>> c516cef8f59a7ac5341aeb2349a183e375b1989f
         </form>
+        <div class="call-action">
+          <p class='login'>¿Ya tienes una cuenta? <a href="#" class='login-link'>Inicia sesión</a></p>
+        </div>
       </div>
     </main>
   </body>
