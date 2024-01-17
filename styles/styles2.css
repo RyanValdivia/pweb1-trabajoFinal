@@ -112,7 +112,7 @@
     display: flex;
     justify-content: center;
     height: 700px;
-    background: url(/images_icons_background/bckround3.jpg) no-repeat;
+    background: url("../images_icons_background/bckround3.jpg") no-repeat;
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
