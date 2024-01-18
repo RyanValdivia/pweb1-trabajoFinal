@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/normalize.css">
     <link href="./styles/form.css" rel="stylesheet">
     <script src='./js/verification.js' defer> </script>
+    <script src='./js/register.js' defer> </script>
   </head>
   <body>
     <main class='main-content'>
@@ -14,7 +15,7 @@
         <div class="disclaimer-content">
           <img src="./images_icons_background/user-icon.png" alt="User icon">
         </div>
-        <form action='' method=''>
+        <form action='cgi/register.pl' method='POST' id="formRegister">
           <div class="campos">
             <div class="campo">
               <input type="text" name="user" placeholder='Usuario' id='user-name' required>
@@ -29,7 +30,7 @@
               <input name="password" type="password" id='user-password-2' placeholder="Confirmación de Contraseña" class='confirm' data-status="invalid" autocomplete='new-password'>
             </div>
           </div>
-          <button type="none">CREAR CUENTA</button>
+          <button type="submit" id="submitButton">CREAR CUENTA</button>
         </form>
         <div class="call-action">
           <p class='login'>¿Ya tienes una cuenta? <a href="#" class='login-link'>Inicia sesión</a></p>
