@@ -1,21 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const formRegister = document.getElementById('formRegister');
+    const formLogin = document.getElementById('loginForm');
 
-    formRegister.addEventListener('submit', function (event) {
+    formLogin.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const formData = new FormData(formRegister);
+        const formData = new FormData(formLogin);
 
-        fetch('cgi/register.pl', {
+        fetch('cgi/login.pl', {
             method: 'POST',
             body: formData
         })
         .then(response => response.json())
         .then(data => {
             if (data.success === 1) {
-                alert('Registro exitoso');
-                // Puedes redirigir o hacer otras acciones después de un registro exitoso
-                window.location.href = "./index.html";
+                alert(data.message);
+                window.location.href = "./Acerca.html";
             } else {
                 alert(data.message);
             }
