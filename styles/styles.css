@@ -24,7 +24,7 @@ body{
 .conteiner-sesion{
     border: 3px solid rgba(0, 0, 0, 0.199);
     margin: auto;
-    width: 90vw;
+    width: 87vw;
     height: 80vh;
     position: relative;
     background-color: rgba(0, 0, 0, 0.384);
@@ -33,7 +33,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 10%;
 }
 
 .caja-img{
@@ -61,46 +61,50 @@ body{
 .caja-img p{
     color: aliceblue;
     font-family: "Arial";
-    font-size: 18px;
+    font-size: 19px;
     text-overflow: ellipsis;
 }
 
 .form-sesion{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 35vw;
-    height: 80vh;
+    height: 85vh;
 }
 .form-user-icon{
-    height: 160px;
-    width: 160px;
+    position: relative;
+    height: 190px;
+    width: 190px;
     background-color: #8C52FF;
+    border: 2px solid #7339e9;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .form-user-icon-element {
-    height: 80px;
-    width: 80px;
+    position: absolute;
+    height: 60%;
+    width: 60%;
 }
 .form-sesion input{
     border: none;
     padding: 10px;
-    width: 350px;
-    height: 50px;
+    width: 380px;
+    height: 55px;
     background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.548);
-    border-radius: 10px;
-    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.753);
+    border-radius: 7px;
+    font-size: 17px;
 }
 .form-sesion button{
     border: none;
-    width: 230px;
-    height: 45px;
+    width: 240px;
+    height: 50px;
     background-color: #8C52FF;
     border-radius: 20px;
     border: 1px ridge rgba(0, 0, 0, 0.397);
