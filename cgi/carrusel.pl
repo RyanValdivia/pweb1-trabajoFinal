@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/opt/lampp/bin/perl
 
 use strict;
 use DBI;
