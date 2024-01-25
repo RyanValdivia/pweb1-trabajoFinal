@@ -183,14 +183,6 @@ p{
 
 footer {
     position: relative;
-<<<<<<< HEAD
-    background-color: #744E9B;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    min-height: 200px;
-=======
     display: flex;
     width: 100%;
     background-color: #8C52FF;
@@ -200,7 +192,6 @@ footer {
     border-top: 5px solid #28024f;
     border-left: 5px solid #28024f;
     border-right: 5px solid #28024f;
->>>>>>> d768914918b6de09e7d82c98c0d585261888a109
 }
 footer p{
     text-align: left;
@@ -209,27 +200,12 @@ footer p{
     margin-bottom: 10px;
     font-size: 14px;
 }
-<<<<<<< HEAD
-
-.bottom-div {
-    position: absolute;
-    font-size: 15px;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    min-height: 34px;
-    background-color: #5B0BAD; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-=======
 footer h4{
     text-align: left;
     font-size: 20px;
     font-family: 'FontDePagina';
     margin-top: 5px;
     margin-left: 5px;
->>>>>>> d768914918b6de09e7d82c98c0d585261888a109
 }
 .footer-4container{
     width: 25%;
