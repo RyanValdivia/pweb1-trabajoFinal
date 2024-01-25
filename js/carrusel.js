@@ -27,7 +27,7 @@ async function reset() {
   let carrusel = document.getElementById("centro");
   try {
     carrusel.lista = (await obtenerLibros()).map((libro) => {
-      return libro.rutaDePortada;
+      return "./images_libros/" + libro.rutaDePortada;
     });
     carrusel.contador = 0;
     carrusel.tempor = null;

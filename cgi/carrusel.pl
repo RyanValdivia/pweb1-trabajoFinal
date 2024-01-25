@@ -18,7 +18,7 @@ my $dbh = DBI->connect( "DBI:mysql:database=$dbName;host=$dbHost;port=3306",
 
 my $query = "SELECT rutaDePortada, descripcion FROM $dbTable";
 my $sth   = $dbh->prepare($query);
-$sth->exdcute() or die $sth->errstr;
+$sth->execute() or die $sth->errstr;
 
 my @libros;
 while ( my $row = $sth->fetchrow_hashref ) {
