@@ -1,0 +1,25 @@
+.flechas,
+.imgs,
+.auto {
+  display: inline-block;
+}
+.flechas {
+  padding: 0 10px;
+  font-size: 50px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.flechas:hover,
+.auto:hover {
+  cursor: pointer;
+}
+.auto {
+  font-size: 30px;
+  padding: 0 8px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.ctrl {
+  font-size: 20px;
+  padding: 0 10px;
+}
