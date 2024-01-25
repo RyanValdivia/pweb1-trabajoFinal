@@ -49,7 +49,8 @@
         <span class="user-name">Jhonatan Dczel</span>
       </div>
     </nav>
-    <div style="text-align: center">
+
+    <div style="text-align: center; display: none">
       <div class="flechas" onclick="cambio(-1)">&lt;</div>
       <div class="flechas" onclick="parar()">
         <img id="centro" src="" alt="" />
@@ -60,6 +61,20 @@
         auto
         <div class="auto" onclick="automat(1000, 1)">&gt;</div>
       </div>
+    </div>
+
+    <div class="carrusel">
+      <img
+        class="control prev"
+        src="./images_icons_background/arrow.png"
+        style="transform: rotate(180deg)"
+        alt="arrow right"
+      />
+      <div class="slide"></div>
+      <img 
+        class="control next"
+        src="./images_icons_background/arrow.png" 
+        alt="Arrow left" />
     </div>
   </body>
 </html>
