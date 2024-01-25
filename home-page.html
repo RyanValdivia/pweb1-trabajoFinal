@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/home-page.css">
+    <link rel="stylesheet" href="./styles/home-page.css" />
+    <link rel="stylesheet" href="./styles/carrusel.css" />
+    <script src="./js/carrusel.js"></script>
     <title>BiblioByte</title>
   </head>
-  <body>
+  <body onload="reset()">
     <nav>
       <div class="logo">
         <span class="logotipo">Bibliobyte</span>
@@ -47,5 +49,17 @@
         <span class="user-name">Jhonatan Dczel</span>
       </div>
     </nav>
+    <div style="text-align: center">
+      <div class="flechas" onclick="cambio(-1)">&lt;</div>
+      <div class="flechas" onclick="parar()">
+        <img id="centro" src="" alt="" />
+      </div>
+      <div class="flechas" onclick="cambio(1)">&gt;</div>
+      <div class="ctrl">
+        <div class="auto" onclick="automat(1000,-1)">&lt;</div>
+        auto
+        <div class="auto" onclick="automat(1000, 1)">&gt;</div>
+      </div>
+    </div>
   </body>
 </html>
