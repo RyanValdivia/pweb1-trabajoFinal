@@ -1,3 +1,17 @@
+async function obtenerLibros() {
+  try {
+    const response = await fetch("cgi/carrusel.pl");
+    if (!response.ok) {
+      throw new Error("Error al obtener los libros");
+    }
+
+    const data = await response.json();
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+  return data;
+}
+
 function cambio(sen) {
   let carrusel = document.getElementById("centro");
   carrusel.contador += sen;
@@ -10,13 +24,9 @@ function cambio(sen) {
 }
 function reset() {
   let carrusel = document.getElementById("centro");
-  carrusel.lista = new Array(
-    "../images_libros/1_ElPrincipito.jpg",
-    "../images_libros/10_Verity.jpg",
-    "../images_libros/11_Aliciaenelpaísdelasmaravillas.jpg",
-    "../images_libros/15_PeterPan.jpg",
-    "../images_libros/19_Matilda.jpg"
-  );
+  carrusel.lista = obtenerLibros().map((libro) => {
+    libro.rutaDePortada;
+  });
   carrusel.contador = 0;
   carrusel.tempor = null;
   parar();

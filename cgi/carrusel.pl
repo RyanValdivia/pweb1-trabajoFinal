@@ -7,8 +7,8 @@ use JSON;
 use warnings;
 
 my $dbName = "biblioteca";
-my $dbUser  = "root";
-my $dbPass  = "";
+my $dbUser  = "alumno";
+my $dbPass  = "pweb1";
 my $dbHost  = "localhost";
 my $dbTable = "libros";
 
