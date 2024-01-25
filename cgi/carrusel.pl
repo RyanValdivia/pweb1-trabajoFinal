@@ -1,4 +1,4 @@
-#!/opt/lampp/bin/perl
+#!"C:\xampp\perl\bin\perl.exe"
 
 use strict;
 use DBI;
@@ -6,7 +6,7 @@ use utf8;
 use JSON;
 use warnings;
 
-my $dbName = "biblioteca";
+my $dbName  = "biblioteca";
 my $dbUser  = "root";
 my $dbPass  = "";
 my $dbHost  = "localhost";
@@ -17,15 +17,15 @@ my $dbh = DBI->connect( "DBI:mysql:database=$dbName;host=$dbHost;port=3306",
   or die "No se pudo conectar $DBI::errstr";
 
 my $query = "SELECT rutaDePortada, descripcion FROM $dbTable";
-my $sth = $dbh->prepare($query);
+my $sth   = $dbh->prepare($query);
 $sth->exdcute() or die $sth->errstr;
 
 my @libros;
-while (my $row = $sth->fetchrow_hashref){
-  push @libros, $row;
+while ( my $row = $sth->fetchrow_hashref ) {
+    push @libros, $row;
 }
 
-my $json_data = to_json(\@libros, {utf8 => 1});
+my $json_data = to_json( \@libros, { utf8 => 1 } );
 
 print "Content-Type: application/json\n\n";
 print $json_data;
