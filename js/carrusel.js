@@ -1,7 +1,7 @@
 async function obtenerLibros() {
   let data;
   try {
-    const response = await fetch("cgi-bin/carrusel.pl");
+    const response = await fetch("cgi/carrusel.pl");
     if (!response.ok) {
       throw new Error("Error al obtener los libros");
     }
