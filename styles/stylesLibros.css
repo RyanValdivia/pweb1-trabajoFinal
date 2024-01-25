@@ -172,13 +172,20 @@ p{
 }
 
 .img-catalogo{
+    transition: transform 0.3s ease;
     height: 15vw;
     padding-left: 5px;
     padding-right: 5px;
     width: auto;
     border: 2px solid black;
 }
+.contendor-img:hover .img-catalogo {
+    transform: scale(1.1);
 
+}
+.contendor-img {
+    display: inline-block;
+}
 
 
 footer {
