@@ -6,7 +6,7 @@ use utf8;
 use JSON;
 use warnings;
 
-my $dbName = "biblioteca";
+my $dbName = "pweb1";
 my $dbUser  = "alumno";
 my $dbPass  = "pweb1";
 my $dbHost  = "localhost";
@@ -31,6 +31,3 @@ print "Content-Type: application/json\n\n";
 print $json_data;
 
 $dbh->disconnect;
-
-
-

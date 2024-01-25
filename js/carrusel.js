@@ -1,11 +1,12 @@
 async function obtenerLibros() {
+  let data;
   try {
-    const response = await fetch("cgi/carrusel.pl");
+    const response = await fetch("cgi-bin/carrusel.pl");
     if (!response.ok) {
       throw new Error("Error al obtener los libros");
     }
 
-    const data = await response.json();
+    data = await response.json();
   } catch (error) {
     console.log("Error: ", error);
   }
@@ -22,15 +23,19 @@ function cambio(sen) {
   }
   carrusel.src = carrusel.lista[carrusel.contador];
 }
-function reset() {
+async function reset() {
   let carrusel = document.getElementById("centro");
-  carrusel.lista = obtenerLibros().map((libro) => {
-    libro.rutaDePortada;
-  });
-  carrusel.contador = 0;
-  carrusel.tempor = null;
-  parar();
-  carrusel.src = carrusel.lista[0];
+  try {
+    carrusel.lista = (await obtenerLibros()).map((libro) => {
+      return libro.rutaDePortada;
+    });
+    carrusel.contador = 0;
+    carrusel.tempor = null;
+    parar();
+    carrusel.src = carrusel.lista[0];
+  } catch (error) {
+    console.log("Error al ejecutar reset: ", error);
+  }
 }
 function parar(car) {
   let carrusel = document.getElementById("centro");
