@@ -6,9 +6,9 @@ use utf8;
 use JSON;
 use warnings;
 
-my $dbName = "pweb1";
-my $dbUser  = "alumno";
-my $dbPass  = "pweb1";
+my $dbName = "biblioteca";
+my $dbUser  = "root";
+my $dbPass  = "";
 my $dbHost  = "localhost";
 my $dbTable = "libros";
 
