@@ -137,7 +137,6 @@ p{
 }
 
 .rigth, .left {
-    flex: 1;
     height: 600px;
 }
 
@@ -145,18 +144,74 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 160px;
+    margin-right: 80px;
 }
 
 .rigth {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    flex: 1.25; 
+    margin: 100px;
+}
+.rigth h1{
+    font-family: 'FontDePagina';
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: rgb(35, 35, 35);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.rigth h2{
+    font-family: 'FontDePagina';
+    text-align: left;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: rgb(35, 35, 35);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.rigth span{
+    font-family: 'FontDePagina';
+    color:#8C52FF;
+    letter-spacing: 2px;
 }
 .rigth p{
     color: black;
+    margin-left: 0;
+    text-align: justify;
+    font-family: "Open Sans", "Poppins", sans-serif;
+}
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 3px solid #8C52FF;
 }
 .imagen-libro{
     height: 550px;
+    border-radius: 5px;
+    border: 2px solid rgb(60, 60, 60);
+}
+.botones{
+    display: flex;
+    justify-content: center;
+}
+button {
+    font-size: 19px;
+    height: 55px;
+    width: 240px;
+    background-color: #7871db;
+    border: 2px solid #7871db;
+    border-radius: 100px;
+    color: #ffffff; /* Cambiado a negro */
+    font-weight: 700;
+    margin: 20px;
+    transition: background-color 1s, color 1s;
+}
+
+button:hover {
+    position: relative;
+    background-color: #b1acf6;
+    border: 3px solid #6d38d6;
+    color: #4e0e67; 
 }

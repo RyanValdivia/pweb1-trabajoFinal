@@ -193,11 +193,12 @@ p{
 }*/
 footer {
     position: relative;
-    background-color: #8C52FF;
+    background-color: #744E9B;
     color: white;
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    min-height: 200px;
 }
 
 .left-content {
@@ -214,8 +215,8 @@ footer {
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 20%;
-    background-color: #333; /* Puedes cambiar el color según tus preferencias */
+    min-height: 34px;
+    background-color: #5B0BAD; 
     display: flex;
     align-items: center;
     justify-content: center;
