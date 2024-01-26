@@ -141,7 +141,7 @@ p {
   background-repeat: no-repeat;
 }
 
-.carrusel{
+.carrusel {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -154,6 +154,7 @@ p {
   width: 600px;
   height: 300px;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 .control {
