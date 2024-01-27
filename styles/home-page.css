@@ -166,3 +166,13 @@ p {
   object-fit: cover;
   padding: 10px;
 }
+
+.recomendados{
+  
+}
+
+.cartelera{
+  display: flex;
+  height: 200px;
+  width: 600px;
+}
