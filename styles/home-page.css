@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", "Poppins", sans-serif;
+  font-family: "FontDePagina", sans-serif;
 }
 
 @font-face {
@@ -21,8 +21,18 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+  align-items: center;
   background-size: cover;
+}
+
+main {
+  width: 100vw;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 20px;
 }
 
 nav {
@@ -145,34 +155,57 @@ p {
   display: flex;
   align-items: center;
   gap: 8px;
+  width: 100%;
+  height: 40%;
 }
 
 .slide {
   display: flex;
   background-color: #000;
-  padding: 2px;
-  width: 100%;
-  height: 300px;
+  height: 200px;
   overflow: hidden;
   scroll-behavior: smooth;
 }
 
 .control {
-  width: 50px;
-  height: 50px;
-  background-color: #8c52ff;
+  width: 40px;
+  height: 40px;
+  background-color: #73ad00;
   border-radius: 50%;
   cursor: pointer;
   object-fit: cover;
   padding: 10px;
+  filter: invert();
 }
 
-.recomendados{
-  
-}
-
-.cartelera{
+.recomendados {
   display: flex;
-  height: 200px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  width: 90%;
+  height: 60%;
+}
+ h1 {
+  font-size: 3rem;
+ }
+
+ h1 span {
+  color: #8c52ff;
+ }
+
+.cartelera img {
+  height: 300px;
+  box-shadow: 0 0 20px #000b;
+
+}
+
+.cartelera {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
   width: 600px;
+  width: 100%;
 }

@@ -12,7 +12,7 @@ next.addEventListener("click", () => {
 
 const obtenerLibros = async function () {
   try {
-    const response = await fetch("http://localhost:3000/obtener-imagenes");
+    const response = await fetch("http://localhost:4500/obtener-imagenes");
     const data = await response.json();
     return data;
   } catch (error) {
