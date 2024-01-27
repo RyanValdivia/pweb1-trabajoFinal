@@ -1,0 +1,176 @@
+p {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: url(./background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  height: 100%;
+}
+
+main {
+  border-radius: 18px;
+  background-color: #fff1;
+  backdrop-filter: blur(9px);
+  box-shadow: 0 0 10px rgb(0 0 0 / .3);
+  width: min(80vw, 400px);
+  min-height: max(70vh, 650px);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 16px;
+}
+
+.signup-content {
+  width: 95%;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 650px;
+}
+
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.campo {
+  width: 100%;
+  flex-grow: 1;
+}
+
+input::placeholder{
+  color: #fff;
+}
+
+.campo > input {
+  border: none;
+  border-bottom: 3px solid #fff;
+  background-color: transparent;
+  border-radius: 1px;
+  padding: 8px;
+  width: 100%;
+  color: #fff;
+}
+
+
+input:valid:not(.confirm),
+input[data-status="valid"]:not(:placeholder-shown) {
+  border-bottom: 3px solid #65d35fdd;
+}
+
+input:invalid:not(:placeholder-shown):not(.confirm),
+input[data-status="invalid"]:not(:placeholder-shown) {
+  border-bottom: 3px solid rgba(255, 0, 0, 0.7);
+}
+
+input:focus {
+  border-bottom: 3px solid #7873dddd !important;
+  outline: none;
+}
+
+.campos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 8px;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 1;
+}
+
+button {
+  height: 3.1rem;
+  width: 10.5rem;
+  font-size: 1.1rem;
+  background-color: #7871db;
+  border: 2px solid #7871db;
+  border-radius: 9px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+button:hover{
+  position: relative;
+  background-color: #fff0;
+  border: 2px solid #fff;
+}
+
+.call-action > .login {
+  color: #fff;
+}
+
+.login > a {
+  color: #afb507;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer > a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.icon {
+  font-weight: 900;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 800px){
+  .main-image {
+    display: none;
+  }
+  .disclaimer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    text-wrap: nowrap;
+  }
+
+  .signup-content{
+    width: 100%;
+    max-width: 500px;
+  }
+  .call-action {
+  }
+  .campo {
+    min-width: 150px;
+  }
+  form {
+    align-items: ;
+    gap: 12px;
+  }
+  .campos {
+    gap: 12px;
+    flex-grow: 1;
+  }
+  :root {
+    font-size: 15px;
+  }
+}
+
