@@ -21,18 +21,42 @@ const obtenerLibros = async function () {
   }
 };
 
+let libros;
+
 const cargarLibros = async function () {
   try {
-    const libros = await obtenerLibros();
+    libros = await obtenerLibros();
 
     libros.forEach((libro) => {
       let portada = document.createElement("img");
       portada.src = "./images_libros/" + libro.rutaDePortada;
-      slide.appendChild(portada);
+
+      let description = document.createElement("p");
+      description.textContent = libro.descripcion;
+
+      let container = document.createElement("div");
+      container.appendChild(portada);
+      container.appendChild(description);
+      container.classList.add("container");
+
+      slide.appendChild(container);
     });
   } catch (error) {
     console.error("Error al cargar libros: ", error);
   }
 };
 
-cargarLibros();
+const iniciar = async function () {
+  await cargarLibros();
+
+  const cartelera = document.querySelector(".cartelera");
+
+  for (let i = 0; i < 6; i++) {
+    const img = document.createElement("img");
+    let num = Math.floor(Math.random() * libros.length);
+    img.src = "./images_libros/" + libros[num].rutaDePortada;
+    cartelera.appendChild(img);
+  }
+};
+
+iniciar();

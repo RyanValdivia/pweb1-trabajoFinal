@@ -160,11 +160,34 @@ p {
 }
 
 .slide {
+  width: 100%;
   display: flex;
-  background-color: #000;
   height: 200px;
   overflow: hidden;
   scroll-behavior: smooth;
+  gap: 24px;
+}
+
+.container {
+  background-color: #0005;
+  backdrop-filter: blur(5px);
+  padding: 16px 32px;
+  min-width: 500px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container > img {
+  height: 150px;
+}
+
+.container > p {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
 }
 
 .control {
@@ -178,6 +201,10 @@ p {
   filter: invert();
 }
 
+.control:hover {
+  transform: scale(1.1);
+}
+
 .recomendados {
   display: flex;
   flex-direction: column;
@@ -186,24 +213,24 @@ p {
   width: 90%;
   height: 60%;
 }
- h1 {
+h1 {
   font-size: 3rem;
- }
+}
 
- h1 span {
+h1 span {
   color: #8c52ff;
- }
+}
 
 .cartelera img {
   height: 300px;
   box-shadow: 0 0 20px #000b;
-
 }
 
 .cartelera {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
   align-items: center;
   height: 300px;
   width: 600px;
