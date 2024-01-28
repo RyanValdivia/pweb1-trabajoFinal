@@ -13,6 +13,8 @@ async function autoScroll() {
   }
 }
 
+autoScroll();
+
 
 prev.addEventListener("click", () => {
   slide.scrollLeft -= 300;
