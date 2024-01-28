@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/obtener-imagenes", (req, res) => {
-  const query = "SELECT rutaDePortada, descripcion FROM libros";
+  const query = "SELECT * FROM libros";
 
   connection.query(query, (err, resultados) => {
     if (err) {

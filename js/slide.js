@@ -2,6 +2,18 @@ const prev = document.querySelector(".prev");
 const slide = document.querySelector(".slide");
 const next = document.querySelector(".next");
 
+let sleep = function (ms) {
+  return new Promise((resolver) => setTimeout(resolver, ms));
+};
+
+async function autoScroll() {
+  while(true){
+    await sleep(2000);
+    slide.scrollLeft += 300;
+  }
+}
+
+
 prev.addEventListener("click", () => {
   slide.scrollLeft -= 300;
 });
@@ -9,6 +21,14 @@ prev.addEventListener("click", () => {
 next.addEventListener("click", () => {
   slide.scrollLeft += 300;
 });
+
+function createLink(libro){
+  let title = libro.titulo;
+  let autor = libro.autor;
+  let desc = libro.descripcion;
+  let imgRoute = libro.rutaDePortada;
+  return `./plantilla-cada-libro.html?title=${title}&desc=${desc}&author=${autor}&imgRoute=${imgRoute}`;
+}
 
 const obtenerLibros = async function () {
   try {
@@ -34,14 +54,16 @@ const cargarLibros = async function () {
       let description = document.createElement("p");
       description.textContent = libro.descripcion;
 
-      let background = document.createElement("div");
+      let background = document.createElement("a");
       background.classList.add("background");
       background.appendChild(portada);
       background.appendChild(description);
+      background.href = createLink(libro);
 
       let container = document.createElement("div");
       container.classList.add("container");
-      container.style.backgroundImage = "url('./images_libros/" + libro.rutaDePortada + "')";
+      container.style.backgroundImage =
+        "url('./images_libros/" + libro.rutaDePortada + "')";
       container.style.backgroundSize = "cover";
       container.appendChild(background);
 
@@ -58,10 +80,14 @@ const iniciar = async function () {
   const cartelera = document.querySelector(".cartelera");
 
   for (let i = 0; i < 6; i++) {
+    const clickeable = document.createElement("a");
+    clickeable.classList.add("link-cartelera");
     const img = document.createElement("img");
     let num = Math.floor(Math.random() * libros.length);
     img.src = "./images_libros/" + libros[num].rutaDePortada;
-    cartelera.appendChild(img);
+    clickeable.href = createLink(libros[num]);
+    clickeable.appendChild(img);
+    cartelera.appendChild(clickeable);
   }
 };
 
