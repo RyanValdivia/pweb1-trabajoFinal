@@ -34,10 +34,16 @@ const cargarLibros = async function () {
       let description = document.createElement("p");
       description.textContent = libro.descripcion;
 
+      let background = document.createElement("div");
+      background.classList.add("background");
+      background.appendChild(portada);
+      background.appendChild(description);
+
       let container = document.createElement("div");
-      container.appendChild(portada);
-      container.appendChild(description);
       container.classList.add("container");
+      container.style.backgroundImage = "url('./images_libros/" + libro.rutaDePortada + "')";
+      container.style.backgroundSize = "cover";
+      container.appendChild(background);
 
       slide.appendChild(container);
     });

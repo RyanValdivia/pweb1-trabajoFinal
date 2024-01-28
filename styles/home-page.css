@@ -166,11 +166,22 @@ p {
   overflow: hidden;
   scroll-behavior: smooth;
   gap: 24px;
+  border-radius: 20px;
 }
 
 .container {
-  background-color: #0005;
-  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-position: center;
+}
+
+.background{
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(9px) brightness(.75);
+  border: 1px solid #0003;
   padding: 16px 32px;
   min-width: 500px;
   border-radius: 20px;
@@ -179,11 +190,12 @@ p {
   align-items: center;
 }
 
-.container > img {
+.background > img {
   height: 150px;
+  box-shadow: 0 0 10px #000e;
 }
 
-.container > p {
+.background > p {
   font-size: 1rem;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
@@ -230,7 +242,7 @@ h1 span {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
   height: 300px;
   width: 600px;
