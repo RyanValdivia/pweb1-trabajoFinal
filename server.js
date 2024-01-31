@@ -74,7 +74,7 @@ function obtenerMejoresSugerencias(terminoBusqueda, libros) {
         return coincidenciaB - coincidenciaA;
     });
 
-    const mejoresSugerencias = librosCoincidentes.slice(0, 10);
+    const mejoresSugerencias = librosCoincidentes.slice(0, 7);
 
     return mejoresSugerencias;
 }

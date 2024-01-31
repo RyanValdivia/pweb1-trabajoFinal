@@ -56,6 +56,7 @@ head.appendChild(styles);
 
 const sugerenciasContainer = document.getElementById('sugerencias');
 
+// Evento al escribir en la barra de búsqueda
 searchInput.addEventListener('input', function () {
   let searchQuery = searchInput.value;
   fetch(`http://localhost:4500/search-books?search=${searchQuery}`)
@@ -67,14 +68,26 @@ searchInput.addEventListener('input', function () {
     .catch((error) => console.error("Error:", error));
 });
 
+// Evento cuando el input está enfocado
 searchInput.addEventListener('focus', function() {
+  // Mostrar sugerencias solo si hay algunas
   if (sugerenciasContainer.innerHTML.trim() !== '') {
     sugerenciasContainer.style.display = 'block';
   }
 });
 
-searchInput.addEventListener('blur', function() {
-  sugerenciasContainer.style.display = 'none';
+// Evento cuando el input pierde el foco
+searchInput.addEventListener('blur', function(event) {
+  // Ocultar sugerencias solo si el clic no se originó en el contenedor de sugerencias
+  if (!sugerenciasContainer.contains(event.relatedTarget)) {
+    sugerenciasContainer.style.display = 'none';
+  }
+});
+
+// Evento al hacer clic en el contenedor de sugerencias
+sugerenciasContainer.addEventListener('click', function() {
+  // Evita que el clic en las sugerencias oculte el contenedor
+  searchInput.focus();
 });
 
 function mostrarSugerencias(sugerencias) {
@@ -82,16 +95,18 @@ function mostrarSugerencias(sugerencias) {
 
   sugerencias.forEach((sugerencia) => {
     const enlace = document.createElement("a");
-    enlace.href = sugerencia.rutaDePortada;
-    enlace.textContent = sugerencia.titulo;
-
-    enlace.addEventListener("click", function (event) {
-      event.preventDefault();
-      alert(`Navegar a: ${this.href}`);
-    });
+    enlace.href = "#";
+    const img = document.createElement("img");
+    img.src = "./images_libros/" + sugerencia.rutaDePortada;
+    const titulo = document.createElement("div");
+    titulo.textContent = sugerencia.titulo;
+    enlace.appendChild(img);
+    enlace.appendChild(titulo);
 
     sugerenciasContainer.appendChild(enlace);
   });
 
+  // Mostrar el contenedor de sugerencias solo si hay sugerencias y el input está enfocado
   sugerenciasContainer.style.display = sugerencias.length > 0 && searchInput === document.activeElement ? 'block' : 'none';
 }
+

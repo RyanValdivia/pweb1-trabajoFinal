@@ -101,16 +101,16 @@ a {
 #sugerencias {
   display: none;
   position: absolute;
-  background-color: #fff;
-  border: 1px solid #ccc;
   width: calc(100%);
-  max-height: 200px;
   overflow-y: auto;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
   z-index: 1;
-
   top: 100%;
   left: 0;
+  backdrop-filter: blur(8px) brightness(0.8);
+  border-radius: 10px; /* Añade bordes redondeados */
+  margin-top: 10px; /* Ajusta el margen superior según tu diseño */
+  padding: 7px;
 }
 
 .search-bar-container {
@@ -118,12 +118,35 @@ a {
 }
 
 #sugerencias a {
-  display: block;
+  display: flex;
   padding: 10px;
   text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid #eee;
-  cursor: pointer; 
+  color: #fff;
+  background-color: #3339; /* Fondo con un color oscuro */
+  border-radius: 8px; /* Bordes redondeados */
+  margin-bottom: 8px; /* Ajusta el espacio entre las sugerencias */
+  cursor: pointer;
+  align-items: center;
+  gap: 1rem;
+  backdrop-filter: blur(8px) brightness(0.8);
+  transition: background-color 0.3s ease; /* Agrega transición de color de fondo */
+}
+
+#sugerencias a:hover {
+  background-color: #555; /* Cambia el color de fondo al pasar el mouse */
+}
+
+#sugerencias img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#sugerencias div {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 700;
 }
 
 #sugerencias a:last-child {
