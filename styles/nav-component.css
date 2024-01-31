@@ -110,7 +110,7 @@ a {
   backdrop-filter: blur(8px) brightness(0.8);
   border-radius: 10px;
   margin-top: 10px; 
-  padding: 7px;
+  padding: 8px;
 }
 
 .search-bar-container {
@@ -129,11 +129,12 @@ a {
   align-items: center;
   gap: 1rem;
   backdrop-filter: blur(8px) brightness(0.8);
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease, transform 0.4s ease; 
 }
 
 #sugerencias a:hover {
   background-color: #555; 
+  transform: scale(1.02);
 }
 
 #sugerencias img {
