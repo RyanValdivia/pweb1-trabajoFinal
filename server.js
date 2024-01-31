@@ -43,6 +43,42 @@ app.get("/obtener-imagenes", (req, res) => {
   });
 });
 
+// Crear una api llamada search-books que reciba un query param llamado search
+app.get("/search-books", (req, res) => {
+  const searchQuery = req.query.search;
+  const query = `SELECT * from libros`;
+
+  connection.query(query, (err, resultados) => {
+    if (err) {
+      console.error("Error al buscar libros:", err);
+      res.status(500).json({ error: "Error al buscar libros" });
+    } else {
+      let mejoresSugerencias = obtenerMejoresSugerencias(searchQuery, resultados);
+      res.json(mejoresSugerencias);
+    }
+  });
+});
+
+function obtenerMejoresSugerencias(terminoBusqueda, libros) {
+    const librosCoincidentes = libros.filter(libro =>
+        libro.titulo.toLowerCase().includes(terminoBusqueda.toLowerCase()) ||
+        libro.autor.toLowerCase().includes(terminoBusqueda.toLowerCase()) ||
+        libro.descripcion.toLowerCase().includes(terminoBusqueda.toLowerCase()) ||
+        libro.generoLiterario.toLowerCase().includes(terminoBusqueda.toLowerCase())
+    );
+
+    librosCoincidentes.sort((a, b) => {
+        const coincidenciaA = a.titulo.toLowerCase().includes(terminoBusqueda.toLowerCase()) ? a.titulo.length : 0;
+        const coincidenciaB = b.titulo.toLowerCase().includes(terminoBusqueda.toLowerCase()) ? b.titulo.length : 0;
+
+        return coincidenciaB - coincidenciaA;
+    });
+
+    const mejoresSugerencias = librosCoincidentes.slice(0, 10);
+
+    return mejoresSugerencias;
+}
+
 app.listen(port, () => {
   console.log(`Servidor Node.js en ejecución en http://localhost:${port}`);
 });

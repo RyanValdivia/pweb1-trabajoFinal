@@ -1,0 +1,130 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8c52ff;
+  padding: 0 3rem;
+  height: 90px;
+  min-height: 80px;
+  width: 100%;
+  color: #fff;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.logo img {
+  width: 65px;
+}
+
+.logotipo {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+.tool-bar {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.search-icon {
+  width: 30px;
+}
+
+.search-bar {
+  height: 30px;
+  max-width: 400px;
+  width: 50vw;
+  border-radius: 10px;
+  border: none;
+  padding: 0 16px;
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+.links {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: bold;
+  gap: 1rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+li a,
+u {
+  font-family: "FontDePagina";
+  letter-spacing: 2px;
+}
+a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.sesion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-image {
+  width: 40px;
+}
+
+.user-name {
+  font-size: bold;
+  font-size: 1.2rem;
+}
+
+#sugerencias {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: calc(100%);
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  top: 100%;
+  left: 0;
+}
+
+.search-bar-container {
+  position: relative;
+}
+
+#sugerencias a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  cursor: pointer; 
+}
+
+#sugerencias a:last-child {
+  border-bottom: none;
+}
