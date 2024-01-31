@@ -54,10 +54,9 @@ styles.type = "text/css";
 
 head.appendChild(styles);
 
-const sugerenciasContainer = document.getElementById('sugerencias');
+const sugerenciasContainer = document.getElementById("sugerencias");
 
-// Evento al escribir en la barra de búsqueda
-searchInput.addEventListener('input', function () {
+searchInput.addEventListener("input", function () {
   let searchQuery = searchInput.value;
   fetch(`http://localhost:4500/search-books?search=${searchQuery}`)
     .then((response) => response.json())
@@ -68,25 +67,19 @@ searchInput.addEventListener('input', function () {
     .catch((error) => console.error("Error:", error));
 });
 
-// Evento cuando el input está enfocado
-searchInput.addEventListener('focus', function() {
-  // Mostrar sugerencias solo si hay algunas
-  if (sugerenciasContainer.innerHTML.trim() !== '') {
-    sugerenciasContainer.style.display = 'block';
+searchInput.addEventListener("focus", function () {
+  if (sugerenciasContainer.innerHTML.trim() !== "") {
+    sugerenciasContainer.style.display = "block";
   }
 });
 
-// Evento cuando el input pierde el foco
-searchInput.addEventListener('blur', function(event) {
-  // Ocultar sugerencias solo si el clic no se originó en el contenedor de sugerencias
+searchInput.addEventListener("blur", function (event) {
   if (!sugerenciasContainer.contains(event.relatedTarget)) {
-    sugerenciasContainer.style.display = 'none';
+    sugerenciasContainer.style.display = "none";
   }
 });
 
-// Evento al hacer clic en el contenedor de sugerencias
-sugerenciasContainer.addEventListener('click', function() {
-  // Evita que el clic en las sugerencias oculte el contenedor
+sugerenciasContainer.addEventListener("click", function () {
   searchInput.focus();
 });
 
@@ -95,7 +88,6 @@ function mostrarSugerencias(sugerencias) {
 
   sugerencias.forEach((sugerencia) => {
     const enlace = document.createElement("a");
-    enlace.href = "#";
     const img = document.createElement("img");
     img.src = "./images_libros/" + sugerencia.rutaDePortada;
     const titulo = document.createElement("div");
@@ -103,10 +95,13 @@ function mostrarSugerencias(sugerencias) {
     enlace.appendChild(img);
     enlace.appendChild(titulo);
 
+    enlace.href = `/plantilla-cada-libro.html?title=${sugerencia.titulo}&desc=${sugerencia.descripcion}&author=${sugerencia.autor}&imgRoute=${sugerencia.rutaDePortada}`;
+
     sugerenciasContainer.appendChild(enlace);
   });
 
-  // Mostrar el contenedor de sugerencias solo si hay sugerencias y el input está enfocado
-  sugerenciasContainer.style.display = sugerencias.length > 0 && searchInput === document.activeElement ? 'block' : 'none';
+  sugerenciasContainer.style.display =
+    sugerencias.length > 0 && searchInput === document.activeElement
+      ? "block"
+      : "none";
 }
-

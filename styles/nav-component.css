@@ -103,13 +103,13 @@ a {
   position: absolute;
   width: calc(100%);
   overflow-y: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   z-index: 1;
   top: 100%;
   left: 0;
   backdrop-filter: blur(8px) brightness(0.8);
-  border-radius: 10px; /* Añade bordes redondeados */
-  margin-top: 10px; /* Ajusta el margen superior según tu diseño */
+  border-radius: 10px;
+  margin-top: 10px; 
   padding: 7px;
 }
 
@@ -122,18 +122,18 @@ a {
   padding: 10px;
   text-decoration: none;
   color: #fff;
-  background-color: #3339; /* Fondo con un color oscuro */
-  border-radius: 8px; /* Bordes redondeados */
-  margin-bottom: 8px; /* Ajusta el espacio entre las sugerencias */
+  background-color: #3339; 
+  border-radius: 8px; 
+  margin-bottom: 8px; 
   cursor: pointer;
   align-items: center;
   gap: 1rem;
   backdrop-filter: blur(8px) brightness(0.8);
-  transition: background-color 0.3s ease; /* Agrega transición de color de fondo */
+  transition: background-color 0.3s ease; 
 }
 
 #sugerencias a:hover {
-  background-color: #555; /* Cambia el color de fondo al pasar el mouse */
+  background-color: #555; 
 }
 
 #sugerencias img {
