@@ -1,12 +1,12 @@
 let contentNav = /*html*/ `
-      <div class="logo">
+      <a href="./home-page.html" class="logo">
         <span class="logotipo">Bibliobyte</span>
         <img
           src="./images_icons_background/logo.png"
           alt="Bibliobyte logo"
           class="isotipo"
         />
-      </div>
+      </a>
       <div class="tool-bar">
         <div class="search">
           <img
@@ -26,9 +26,9 @@ let contentNav = /*html*/ `
           </div>
         </div>
         <ul class="links">
-          <li><a href="#">Libros</a></li>
+          <li><a href="./libros.html">Libros</a></li>
           <li><a href="#">Tus libros</a></li>
-          <li><a href="#">Acerca</a>
+          <li><a href="./Acerca.html">Acerca</a>
           </li>
         </ul>
       </div>

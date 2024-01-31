@@ -2,7 +2,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "FontDePagina", sans-serif;
 }
 
 @font-face {
@@ -120,10 +119,15 @@ p {
 }
 h1 {
   font-size: 3rem;
+  font-family: "FontDePagina", sans-serif;
 }
 
 h1 span {
   color: #8c52ff;
+}
+
+h2{
+  font-family: "FontDePagina", sans-serif;
 }
 
 .cartelera img {

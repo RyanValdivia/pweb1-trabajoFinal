@@ -14,7 +14,7 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   font-family: "Poppins", sans-serif !important;
 }
 
@@ -95,6 +95,7 @@ a {
 .user-name {
   font-size: bold;
   font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
 }
 
 #sugerencias {
