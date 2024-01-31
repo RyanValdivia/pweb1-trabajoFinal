@@ -14,7 +14,7 @@ a.innerHTML = author;
 const d = document.querySelector('#desc');
 d.innerHTML = desc;
 const img = document.querySelector('#img');
-img.src = "../proyectoFinal/images_libros/" + imgRoute;
+img.src = "./images_libros/" + imgRoute;
 console.log(img.src);
 
 // Mostrar los datos en la página
