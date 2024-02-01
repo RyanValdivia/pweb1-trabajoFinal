@@ -11,31 +11,26 @@ my $dbName  = "biblioteca";
 my $dbUser  = "root";
 my $dbPass  = "";
 my $dbHost  = "localhost";
-my $dbTable = "usuarios";
+my $dbTable = "libros";
 
 my $cgi = CGI->new();
 
-my $user  = $cgi->param('user');
-my $email = $cgi->param('email');
-my $pass  = $cgi->param('password');
-
-# Correcciones en la conexión a la base de datos
 my $dbh = DBI->connect( "DBI:mysql:database=$dbName;host=$dbHost;port=3306",
     $dbUser, $dbPass )
   or die "No se pudo conectar $DBI::errstr";
 
-utf8::decode($user);
-utf8::decode($pass);
-utf8::decode($email);
+my $title       = $cgi->param("title");
+my $description = $cgi->param("desc");
+my $author      = $cgi->param("author");
+my $gendre      = $cgi->param("gendre");
 
-# Verificar si ya existe un usuario con el mismo nombre o correo
-my $check_sql = "SELECT COUNT(*) FROM $dbTable WHERE username = ? OR email = ?";
+my $check_sql = "SELECT COUNT(*) FROM $dbTable WHERE tiulo = ?";
 my $check_sth = $dbh->prepare($check_sql);
-$check_sth->execute( $user, $email ) or die $check_sth->errstr;
+$check_sth->execute($title) or die $check_sth->errstr;
 
-my ($existing_users) = $check_sth->fetchrow_array;
+my ($existing_books) = $check_sth->fetchrow_array;
 
-if ( $existing_users > 0 ) {
+if ( $existing_books > 0 ) {
 
     # Ya existe un usuario con el mismo nombre de usuario o correo
     my $response = {
@@ -49,15 +44,11 @@ if ( $existing_users > 0 ) {
 
 }
 else {
-    my $sql =
-      "INSERT INTO $dbTable (username, email, password) VALUES (?, ?, ?)";
+    my $sql = "INSERT INTO $dbTable (titulo, autor) VALUES (?, ?, ?)";
     my $sth = $dbh->prepare($sql);
-    $sth->execute( $user, $email, $pass ) or die $sth->errstr;
+    $sth->execute() or die $sth->errstr;
     my $response      = { success => 1, message => "Registro exitoso" };
     my $json_response = to_json($response);
     print $cgi->header('application/json');
     print $json_response;
 }
-
-# Correcciones en la desconexión de la base de datos
-$dbh->disconnect;
