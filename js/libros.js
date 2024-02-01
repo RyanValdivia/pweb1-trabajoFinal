@@ -50,7 +50,6 @@ const cargarLibros = async () => {
       generos[libro.generoLiterario].push(container);
     });
 
-    // Crear una cartelera por cada género literario
     for (const genero in generos) {
       const cartelera = document.querySelector(`.${genero.toLowerCase().split(" ").join("-")}-cartelera`);
       

@@ -105,3 +105,18 @@ function mostrarSugerencias(sugerencias) {
       ? "block"
       : "none";
 }
+
+let sticky;
+const nav = document.querySelector("nav");
+
+document.addEventListener("DOMContentLoaded", function() {
+  sticky = nav.offsetTop;
+});
+
+window.addEventListener("scroll", function() {
+  if (window.scrollY > sticky) {
+    nav.classList.add("sticky");
+  } else {
+    nav.classList.remove("sticky");
+  }
+});

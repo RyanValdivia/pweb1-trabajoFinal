@@ -12,6 +12,12 @@ nav {
   color: #fff;
   gap: 2rem;
   position: sticky;
+  transition: background-color 0.5s ease, backdrop-filter 0.5s ease;
+}
+
+nav.sticky {
+  background-color: #8c52ffaa;
+  backdrop-filter: blur(10px); 
 }
 
 .logo {

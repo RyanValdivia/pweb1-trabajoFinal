@@ -20,86 +20,20 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    align-items: space-between;
-    background-size: cover;
-}
-
-nav {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #8C52FF;
-    padding: 0 3rem;
-    height: 90px;
-    min-height: 80px;
-    width: 100%;
-    color: #FFF;
-    gap: 2rem;
+    background-size: cover;
+    min-height: 100vh;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.logo img {
-    width: 65px;
-}
-
-.logotipo {
-    font-size: 1.9rem;
-    font-weight: bold;
-}
-
-.tool-bar {
-    flex: 1;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.search {
+section {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    flex: 1;
-}
-
-.search-icon {
-    width: 30px;
-}
-
-.search-bar {
-    height: 30px;
-    max-width: 400px;
-    width: 50vw;
-    border-radius: 10px;
-    border: none;
-    padding: 0 16px;
-}
-
-.links {
-    display: flex;
-    flex: 1;
-    justify-content: space-evenly;
     align-items: center;
-    font-weight: bold;
-    gap: 1rem;
+    margin: 0;
+    padding: 0;
 }
 
-ul {
-    list-style: none;
-    display: flex;
-}
-li a, u{
-    font-family: 'FontDePagina';
-    letter-spacing: 2px;
-}
-a {
-    text-decoration: none;
-    font-size: 1.3rem;
-    color: #fff;
-}
+
 h3, p{
     margin-left: 50px;
     color: #ffffff;
@@ -107,33 +41,18 @@ h3, p{
     font-family: 'FontDePagina';
     letter-spacing: 2px;
   }
-h3{
-  font-size: 45px;
-}
 p{
-  font-size: 32px;
-}
-.sesion {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  font-size: 1.5rem;
 }
 
-.user-image {
-    width: 40px;
-}
-
-.user-name {
-    font-size: bold;
-    font-size: 1.2rem;
-}
 
 .presentacion-libro {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    height: 690px;
+    height: 100%;
+    width: 100%;
+
 }
 
 .rigth, .left {
@@ -144,15 +63,13 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 160px;
-    margin-right: 80px;
 }
 
 .rigth {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 100px;
+    max-width: 700px;
 }
 .rigth h1{
     font-family: 'FontDePagina';
@@ -185,7 +102,7 @@ p{
 hr{
     margin-top: 20px;
     margin-bottom: 20px;
-    border: 3px solid #8C52FF;
+    border: 2px solid #8C52FF;
 }
 .imagen-libro{
     height: 550px;
@@ -203,7 +120,7 @@ button {
     background-color: #7871db;
     border: 2px solid #7871db;
     border-radius: 100px;
-    color: #ffffff; /* Cambiado a negro */
+    color: #ffffff; 
     font-weight: 700;
     margin: 20px;
     transition: background-color 1s, color 1s;
