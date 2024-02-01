@@ -29,7 +29,6 @@ h3, p{
     color: #ffffff;
     text-align: right;
     font-family: 'FontDePagina';
-    letter-spacing: 2px;
   }
 h3{
   font-size: 45px;
@@ -177,44 +176,4 @@ p{
 .column:hover .cartilla {
     border: solid #3f1593;
     transform: translateX(38%);
-}
-footer {
-    display: flex;
-    width: 100%;
-    background-color: #8C52FF;
-    color: white;
-    padding: 20px;
-    font-size: 2rem;
-    justify-content: space-evenly;
-}
-footer p{
-    text-align: left;
-    margin-left: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-footer h4{
-    text-align: left;
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    margin-top: 5px;
-    margin-left: 5px;
-}
-.derechos{
-    background-color: #672ca4;
-}
-.derechos p{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 35px;
-    font-size: 17px;
-    text-align: center;
-    margin-top: 7px;
-    margin-bottom:7px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
 }

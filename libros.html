@@ -8,87 +8,27 @@
         <link rel="icon" type="image/jpg" href="./images_icons_background/logo.ico"/>
         <script src="js/libros.js" defer></script>
         <script src="./plantillas-cgi/nav-component.js" defer></script>
+        <script src="./plantillas-cgi/footer-component.js" defer></script>
     </head>
     <body>
         <nav class="nav-container">
         </nav>
+        <main class="principal">
+            <h1>Explora nuestro catálogo</h1>
+            <div class="catalogo-container">
+                <h2>Infantil</h2>
+                <div class="infantil-cartelera cartelera"></div>
+                <h2>Fantasía</h2>
+                <div class="fantasia-cartelera cartelera"></div>
+                <h2>Ciencia Ficción</h2>
+                <div class="ciencia-ficción-cartelera cartelera"></div>
+                <h2>Romance</h2>
+                <div class="romance-cartelera cartelera"></div>
+                <h2>Novela</h2>
+                <div class="novela-cartelera cartelera"></div>
 
-
-        <div class="content-catalogo">
-            <h2>REVISA NUESTRO,  <span class="morado">CATÁLOGO DE LIBROS</span></h2>
-            <br>
-            <h3>INFANTIL</h3>
-            <div class="catalogo">
-                <a  class="contendor-img" onclick="consultarDatos(1)"><img src="images_libros/1_ElPrincipito.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(13)"><img src="images_libros/13_Ellibrodelaselva.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(14)"><img src="images_libros/14_Pinocho.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(15)"><img src="images_libros/15_PeterPan.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(16)"><img src="images_libros/16_ElmaravillosomagodeOz.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(17)"><img src="images_libros/17_HarryPotter.jpg" alt="libro" class="img-catalogo"></a>
             </div>
-            <h3>NOVELAS</h3>
-            <div class="catalogo">
-                <a  class="contendor-img"  onclick="consultarDatos(21)"><img src="images_libros/21_Cienañosdesoledad.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(22)"><img src="images_libros/22_DonQuijotedelaMancha.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(23)"><img src="images_libros/23_Rayuela.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(24)"><img src="images_libros/24_Elamorenlostiemposdelcólera.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(26)"><img src="images_libros/26_Laciudadylosperros.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(27)"><img src="images_libros/27_Aura.jpg" alt="libro" class="img-catalogo"></a>
-            </div>
-            <h3>CIENCIA FICCION</h3>
-            <div class="catalogo">
-                <a  class="contendor-img"  onclick="consultarDatos(31)"><img src="images_libros/31_1984.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(32)"><img src="images_libros/32_Dune.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(33)"><img src="images_libros/33_Losdetectivessalvajes.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(34)"><img src="images_libros/34_Lamáquinadeltiempo.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(35)"><img src="images_libros/35_Yo,robot.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(36)"><img src="images_libros/36_Guíadelautoestopistagaláctico.jpg" alt="libro" class="img-catalogo"></a>
-            </div><br>
-            <h3>FANTASIA</h3>
-            <div class="catalogo">
-                <a  class="contendor-img"  onclick="consultarDatos(47)"><img src="images_libros/41_TrilogíadelVatídico.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(42)"><img src="images_libros/42_CrónicadelAsesinodeReyes.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(43)"><img src="images_libros/43_LaSombradelViento.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(44)"><img src="images_libros/44_Mundodisco.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(45)"><img src="images_libros/45_JonathanStrangeyelseñorNorrell.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(46)"><img src="images_libros/46_ElUltimoDeseo.jpg" alt="libro" class="img-catalogo"></a>
-            </div><br>
-            <h3>ROMANCE</h3>
-            <div class="catalogo">
-                <a  class="contendor-img"  onclick="consultarDatos(51)"><img src="images_libros/51_Lamujerdelviajeroeneltiempo.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(52)"><img src="images_libros/52_Farsadeamoralaespañola.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(53)"><img src="images_libros/53_Todasesascosasquetedirémañana.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(54)"><img src="images_libros/54_Elvestidodenovia.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(55)"><img src="images_libros/55_Elmapadelosanehlos.jpg" alt="libro" class="img-catalogo"></a>
-                <a  class="contendor-img"  onclick="consultarDatos(56)"><img src="images_libros/56_Lahipótesisdelamor.jpg" alt="libro" class="img-catalogo"></a>
-            </div><br>
-        </div>
-
-        <footer class="footer">
-            <div class="footer-4container">
-                <h4>Colaboradores:</h4>
-                <p>- Arias Quispe Jhonathan David   </p>
-                <p>- Ajra huacso Jeans Anthony      </p>
-                <p>- Valdivia Segovia Ryan Fabian   </p>
-            </div>
-            <div class="footer-4container">
-                <br>
-                <p>- Quispe Arratea Alexandra Raquel</p>
-                <p>- Quispe Madriaga Jeferson Jofre </p>  
-            </div>
-            <div class="footer-4container">
-                <h4>¿QUE PUEDO HACER POR TI?</h4>
-                <p>- Pagina de inicio  - Login</p>
-                <p>- Pagina de libros  - Registro</p>
-                <p>- Pagina Acerca</p>
-                
-            </div>
-            <div class="footer-4container">
-            </div>
-        </footer>
-        <div class="derechos">
-            <p>@ TODOS LOS DERECHOS RESERVADOS 2024</p>
-        </div>
-
+        </main>
+        <div class="footer-container"></div>
     </body>
 </html>
