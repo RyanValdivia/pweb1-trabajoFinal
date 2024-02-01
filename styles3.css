@@ -111,7 +111,8 @@ hr{
 }
 .botones{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 25px;
 }
 button {
     font-size: 19px;
@@ -122,13 +123,17 @@ button {
     border-radius: 100px;
     color: #ffffff; 
     font-weight: 700;
-    margin: 20px;
-    transition: background-color 1s, color 1s;
+    transition: background-color .4s, color .4s;
+    outline: none;
 }
 
 button:hover {
-    position: relative;
-    background-color: #b1acf6;
-    border: 3px solid #6d38d6;
-    color: #4e0e67; 
+    background-color: #fff;
+    border: 2px solid #8c52ff;
+    color: #8c52ff; 
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
 }

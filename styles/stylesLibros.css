@@ -43,7 +43,7 @@ h2 {
 
 .container {
     width: 90vw;
-    max-width: 600px;
+    max-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
