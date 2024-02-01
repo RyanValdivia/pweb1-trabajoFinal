@@ -1,8 +1,9 @@
 const createLink = (libro) => {
   const title = libro.titulo;
   const autor = libro.autor;
+  const desc = libro.descripcion;
   const imgRoute = libro.rutaDePortada;
-  return `./plantilla-cada-libro.html?title=${title}&author=${autor}&imgRoute=${imgRoute}`;
+  return `./plantilla-cada-libro.html?title=${title}&author=${autor}&desc=${desc}&imgRoute=${imgRoute}`;
 };
 
 const obtenerLibros = async () => {
