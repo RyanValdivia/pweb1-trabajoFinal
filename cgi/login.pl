@@ -8,8 +8,8 @@ use utf8;
 use JSON;
 
 my $dbName  = "biblioteca";
-my $dbUser  = "root";
-my $dbPass  = "";
+my $dbUser  = "manzana";
+my $dbPass  = "1604";
 my $dbHost  = "localhost";
 my $dbTable = "usuarios";
 
