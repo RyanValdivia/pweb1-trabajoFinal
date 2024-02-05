@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+  font-family: 'FontDePagina';
+  src: url('../fonts/Gagalin-Regular.otf') format('opentype');
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+main{
+    background: radial-gradient(#fff, #eee);
+    padding: 2rem;
+}
+
+.principal {
+  text-align: center;
+}
+
+.catalogo-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: space-evenly;
+}
+
+h1, h2{
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-family: "FontDePagina", sans-serif;
+    color: #8c52ff;
+}
+
+.container {
+    width: 90vw;
+    max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-position: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  overflow: hidden;
+
+}
+
+.container:hover {
+  opacity: .8;
+  transform: scale(1.05);
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(9px) brightness(.75);
+  padding: 16px 32px;
+  min-width: 500px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.background > img {
+  height: 150px;
+  box-shadow: 0 0 10px #000e;
+}
+
+.link-cartelera img {
+  height: 300px;
+  box-shadow: 0 0 20px #000b;
+  transition: transform 0.4s ease;
+}
+
+.link-cartelera img:hover {
+  transform: scale(1.1);
+}
+
+.link-cartelera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.link-cartelera:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: "FontDePagina", sans-serif;
+  margin-bottom: 20px;
+}
+
+h1 span {
+  color: #8c52ff;
+}
+
+
+.cartelera{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-evenly;
+}
+
+.background > div {
+    font-size: 1rem;
+    font-weight: 600;
+}
+

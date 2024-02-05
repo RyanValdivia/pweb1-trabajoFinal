@@ -23,7 +23,7 @@ const cargarLibros = async () => {
   try {
     libros = await obtenerLibros();
 
-    const generos = {};
+    const generos = {9};
 
     libros.forEach((libro) => {
       if (!generos[libro.generoLiterario]) {
