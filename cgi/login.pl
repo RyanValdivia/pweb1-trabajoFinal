@@ -6,6 +6,7 @@ use CGI;
 use DBI;
 use utf8;
 use JSON;
+use Encode qw(encode_utf8);
 
 my $dbName  = "biblioteca";
 my $dbUser  = "manzana";
@@ -40,17 +41,16 @@ if ( $existing_users > 0 ) {
         message => "Inicio de sesion exitoso"
     };
     my $json_response = to_json($response);
-    print $cgi->header('application/json; charset=UTF-8');
+    print $cgi->header( -type => 'application/json; charset=UTF-8' );
+    print encode_utf8($json_response);
 
-    print $json_response;
     exit;
 }
 else {
     my $response = { success => 0, message => "Usuario o contraseña erróneos" };
     my $json_response = to_json($response);
-    print $cgi->header('application/json; charset=UTF-8');
-
-    print $json_response;
+    print $cgi->header( -type => 'application/json; charset=UTF-8' );
+    print encode_utf8($json_response);
 }
 
 #Desconexión de la base de datos
