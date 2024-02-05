@@ -8,7 +8,7 @@ const createLink = (libro) => {
 
 const obtenerLibros = async () => {
   try {
-    const response = await fetch("http://localhost:4500/obtener-imagenes");
+    const response = await fetch("http://3.137.191.16:4500/obtener-imagenes");
     const data = await response.json();
     return data;
   } catch (error) {
@@ -23,7 +23,7 @@ const cargarLibros = async () => {
   try {
     libros = await obtenerLibros();
 
-    const generos = {9};
+    const generos = {};
 
     libros.forEach((libro) => {
       if (!generos[libro.generoLiterario]) {
