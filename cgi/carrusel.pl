@@ -5,12 +5,13 @@ use DBI;
 use utf8;
 use JSON;
 use warnings;
+use Encode qw(encode_utf8);
 
 my $dbName  = "biblioteca";
-my $dbUser  = "root";
-my $dbPass  = "";
+my $dbUser  = "manzana";
+my $dbPass  = "1604";
 my $dbHost  = "localhost";
-my $dbTable = "libros";
+my $dbTable = "usuarios";
 
 my $dbh = DBI->connect( "DBI:mysql:database=$dbName;host=$dbHost;port=3306",
     $dbUser, $dbPass )
