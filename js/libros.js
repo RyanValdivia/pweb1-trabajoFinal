@@ -8,7 +8,7 @@ const createLink = (libro) => {
 
 const obtenerLibros = async () => {
   try {
-    const response = await fetch("http://3.137.191.16:4500/obtener-imagenes");
+    const response = await fetch("http://13.59.127.71:4500/obtener-imagenes");
     const data = await response.json();
     return data;
   } catch (error) {
