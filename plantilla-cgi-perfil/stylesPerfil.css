@@ -16,7 +16,6 @@ body {
 }
 main{
     background: radial-gradient(#fff, #eee);
-    padding: 2rem;
 }
 
 .principal {
@@ -113,16 +112,35 @@ h1 span {
   color: #8c52ff;
 }
 
-
-.cartelera{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    justify-content: space-evenly;
-}
-
 .background > div {
     font-size: 1rem;
     font-weight: 600;
 }
 
+
+.banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-fondo-perfil {
+  background-image: url('tu-fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 150px;
+  position: relative;
+  background-color: #000000;
+  z-index: 0;
+}
+.perfil {
+  position: absolute;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+}
+.informacion{
+  background-color: hsl(171, 83%, 44%);
+  width: 100%;
+  height: 200px;
+}
