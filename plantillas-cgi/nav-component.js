@@ -1,8 +1,16 @@
+// Este codigo toma de consideracion que la el html al que se le aplica el nav se encuentra en la direccion de ruta al proyecto, como soluciono esto? quiero que independientemente de donde se llame, las rutas relativas funcionen bien
+let fixPath = "";
+
+if(window.location.pathname.split("/").length === 3){
+  fixPath = ".";
+}
+
+
 let contentNav = /*html*/ `
       <a href="./home-page.html" class="logo">
         <span class="logotipo">Bibliobyte</span>
         <img
-          src="./images_icons_background/logo.png"
+          src= "${fixPath}./images_icons_background/logo.png"
           alt="Bibliobyte logo"
           class="isotipo"
         />
@@ -10,7 +18,7 @@ let contentNav = /*html*/ `
       <div class="tool-bar">
         <div class="search">
           <img
-            src="./images_icons_background/search.svg"
+            src="${fixPath}./images_icons_background/search.svg"
             alt="search icon"
             class="search-icon"
           />
@@ -26,15 +34,15 @@ let contentNav = /*html*/ `
           </div>
         </div>
         <ul class="links">
-          <li><a href="./libros.html">Libros</a></li>
+          <li><a href="${fixPath}./libros.html">Libros</a></li>
           <li><a href="#">Tus libros</a></li>
-          <li><a href="./Acerca.html">Acerca</a>
+          <li><a href="${fixPath}./Acerca.html">Acerca</a>
           </li>
         </ul>
       </div>
       <div class="sesion">
         <img
-          src="./images_icons_background/user-1.png"
+          src="${fixPath}./images_icons_background/user-1.png"
           alt="user image"
           class="user-image"
         />
@@ -48,7 +56,7 @@ navContainer.innerHTML = contentNav;
 let searchInput = document.querySelector(".search-bar");
 let head = document.querySelector("head");
 let styles = document.createElement("link");
-styles.href = "./styles/nav-component.css";
+styles.href = fixPath + "./styles/nav-component.css";
 styles.rel = "stylesheet";
 styles.type = "text/css";
 
@@ -89,13 +97,13 @@ function mostrarSugerencias(sugerencias) {
   sugerencias.forEach((sugerencia) => {
     const enlace = document.createElement("a");
     const img = document.createElement("img");
-    img.src = "./images_libros/" + sugerencia.rutaDePortada;
+    img.src = fixPath + "./images_libros/" + sugerencia.rutaDePortada;
     const titulo = document.createElement("div");
     titulo.textContent = sugerencia.titulo;
     enlace.appendChild(img);
     enlace.appendChild(titulo);
 
-    enlace.href = `/plantilla-cada-libro.html?title=${sugerencia.titulo}&desc=${sugerencia.descripcion}&author=${sugerencia.autor}&imgRoute=${sugerencia.rutaDePortada}`;
+    enlace.href = fixPath + `/plantilla-cada-libro.html?title=${sugerencia.titulo}&desc=${sugerencia.descripcion}&author=${sugerencia.autor}&imgRoute=${sugerencia.rutaDePortada}`;
 
     sugerenciasContainer.appendChild(enlace);
   });
@@ -120,3 +128,4 @@ window.addEventListener("scroll", function() {
     nav.classList.remove("sticky");
   }
 });
+
