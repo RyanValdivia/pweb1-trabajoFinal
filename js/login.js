@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             if (data.success === 1) {
                 alert(data.message);
-                window.location.href = "./Acerca.html";
+                window.location.href = "./home-page.html";
             } else {
                 alert(data.message);
             }
