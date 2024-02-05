@@ -40,14 +40,16 @@ if ( $existing_users > 0 ) {
         message => "Inicio de sesion exitoso"
     };
     my $json_response = to_json($response);
-    print $cgi->header('application/json');
+    print $cgi->header('application/json; charset=UTF-8');
+
     print $json_response;
     exit;
 }
 else {
     my $response = { success => 0, message => "Usuario o contraseña erróneos" };
     my $json_response = to_json($response);
-    print $cgi->header('application/json');
+    print $cgi->header('application/json; charset=UTF-8');
+
     print $json_response;
 }
 
