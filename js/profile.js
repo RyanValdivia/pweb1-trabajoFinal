@@ -7,3 +7,4 @@ let userData;
                 userData = data;
             })
             .catch(error => console.error('Error:', error));
+console.format(userData);
