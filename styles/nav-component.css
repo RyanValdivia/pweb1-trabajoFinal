@@ -7,7 +7,6 @@ nav {
   background-color: #8c52ff;
   padding: 0 3rem;
   height: 90px;
-  min-height: 80px;
   width: 100%;
   color: #fff;
   gap: 2rem;
@@ -173,7 +172,11 @@ a {
   nav {
     padding: 0 1rem;
     gap: .5rem;
-    height: 20px;
+    height: 65px;
+  }
+  .logo img{
+    height: 40px;
+    width: auto;
   }
   .links {
     gap: .5rem;

@@ -147,9 +147,10 @@ h2{
 }
 @media (max-width: 660px) {
   main{
-    padding: 32px 8px;
+    padding: 8px;
   }
   .carrusel {
+    margin-top: 16px;
     height: auto;
   }
   .cartelera {
