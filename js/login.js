@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             if (data.success === 1) {
                 alert(data.message);
+                var userId = data.user_id;
+                sessionStorage.setItem('userId', usuarioId);
+                console.log(userId);
                 window.location.href = "./home-page.html";
+
             } else {
                 alert(data.message);
             }

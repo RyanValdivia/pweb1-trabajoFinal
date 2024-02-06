@@ -26,19 +26,19 @@ my $dbh = DBI->connect( "DBI:mysql:database=$dbName;host=$dbHost;port=3306",
 utf8::decode($user);
 utf8::decode($pass);
 
-my $check_sql =
-  "SELECT COUNT(*) FROM $dbTable WHERE username = ? AND password = ?";
+my $check_sql = "SELECT id FROM $dbTable WHERE username = ? AND password = ?";
 my $check_sth = $dbh->prepare($check_sql);
 $check_sth->execute( $user, $pass ) or die $check_sth->errstr;
 
-my ($existing_users) = $check_sth->fetchrow_array;
+my ($user_id) = $check_sth->fetchrow_array;
 
-if ( $existing_users > 0 ) {
+if ($user_id) {
 
     # Existe un usuario que coincida con el nombre de usuario y la contraseña
     my $response = {
         success => 1,
-        message => "Inicio de sesion exitoso"
+        message => "Inicio de sesion exitoso",
+        user_id => $user_id
     };
     my $json_response = to_json($response);
     print $cgi->header( -type => 'application/json; charset=UTF-8' );
