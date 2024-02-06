@@ -6,6 +6,7 @@ if(window.location.pathname.split("/").length === 3){
   fixPath = ".";
 }
 
+let userName = sessionStorage.getItem("userName");
 
 let contentNav = /*html*/ `
       <a href="./home-page.html" class="logo">
@@ -47,7 +48,7 @@ let contentNav = /*html*/ `
           alt="user image"
           class="user-image"
         />
-        <span class="user-name">Jhonatan Dczel</span>
+        <a href=".././perfil.html"><span class="user-name">${userName}</span></a>
       </div>
 `;
 
