@@ -24,12 +24,12 @@ footer {
 }
 .derechos{
     background-color: #672ca4;
-}
-.derechos p{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 60px;
+}
+.derechos p{
     font-size: 1.1rem;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
