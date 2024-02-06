@@ -6,7 +6,7 @@ nav {
   align-items: center;
   background-color: #8c52ff;
   padding: 0 3rem;
-  height: 90px;
+  min-height: 70px;
   width: 100%;
   color: #fff;
   gap: 2rem;
@@ -169,19 +169,28 @@ a {
 }
 
 @media (max-width: 660px) {
+  :root{
+    font-size: 14px;
+  }
   nav {
     padding: 0 1rem;
     gap: .5rem;
-    height: 65px;
+    min-height: 65px;
   }
   .logo img{
     height: 40px;
     width: auto;
   }
+  .links > a {
+    color: red;
+  }
   .links {
     gap: .5rem;
     text-align: center;
-    font-size: 10px;
+  }
+  .background > div {
+    font-size: 1.2rem;
+    font-weight: 600;
   }
   .search {
     display: none;
@@ -193,6 +202,5 @@ a {
     width: 35px;
   }
   .user-name {
-    font-size: 1rem;
   }
 }
