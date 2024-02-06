@@ -1,3 +1,7 @@
+require('dotenv').config();
+
+const apiTP = process.env.API_TP;
+
 const createLink = (libro) => {
   const title = libro.titulo;
   const autor = libro.autor;
