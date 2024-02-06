@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.success === 1) {
                 alert(data.message);
                 var userId = data.user_id;
-                sessionStorage.setItem('userId', usuarioId);
+                sessionStorage.setItem('userId', userId);
                 console.log(userId);
                 window.location.href = "./home-page.html";
 
