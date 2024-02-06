@@ -1,6 +1,9 @@
 if(sessionStorage.getItem('userId' != null)){
-    const user = document.querySelector("#username");
-    const email = document.querySelector("#email");
-    user.innerHTML = sessionStorage.getItem('userName');
-    email.innerHTML = sessionStorage.getItem('userEmail');
+    fetch(`cgi/profile.pl?id=${sessionStorage.getItem('userId')}`)
+    .then(response => response.json())
+            .then(data => {
+                // Manipular los datos recibidos
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
 }

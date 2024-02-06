@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var userId = data.user_id;
                 sessionStorage.setItem('userId', userId);
                 sessionStorage.setItem('userName', data.user_name);
+            
                 window.location.href = "./home-page.html";
 
             } else {
