@@ -1,4 +1,4 @@
-
+console.log(sessionStorage.getItem('userid') + sessionStorage.getItem('userName'));
 
 const prev = document.querySelector(".prev");
 const slide = document.querySelector(".slide");

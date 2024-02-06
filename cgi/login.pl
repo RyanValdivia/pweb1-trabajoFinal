@@ -36,9 +36,10 @@ if ($user_id) {
 
     # Existe un usuario que coincida con el nombre de usuario y la contraseña
     my $response = {
-        success => 1,
-        message => "Inicio de sesion exitoso",
-        user_id => $user_id
+        success   => 1,
+        message   => "Inicio de sesion exitoso",
+        user_id   => $user_id,
+        user_name => $user
     };
     my $json_response = to_json($response);
     print $cgi->header( -type => 'application/json; charset=UTF-8' );
