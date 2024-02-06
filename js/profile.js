@@ -1,4 +1,3 @@
-
 let userData;
     fetch(`cgi/profile.pl?id=${sessionStorage.getItem('userId')}`)
     .then(response => response.json())
@@ -7,4 +6,16 @@ let userData;
                 userData = data;
             })
             .catch(error => console.error('Error:', error));
-console.format(userData);
+const username = userData.username;
+const email = userData.email;
+
+const nombreP = document.getElementById('nombre');
+const tagP = document.getElementById('tag');
+const usernameP = document.getElementById('username');
+const emailP = document.getElementById('email');
+
+nombrep.textContent = username;
+tagP.textContent = username;
+usernameP.textContent = username;
+
+emailP.textContent = email;
