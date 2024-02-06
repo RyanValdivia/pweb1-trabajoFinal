@@ -7,7 +7,7 @@
 
                 const nombreP = document.getElementById('nombre');
                 const tagP = document.getElementById('tag');
-                const usernameP = document.getElementById('username');
+                const usernameP = document.getElementById('userName');
                 const emailP = document.getElementById('email');
 
                 nombreP.textContent = username;
