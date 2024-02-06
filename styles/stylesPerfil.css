@@ -187,3 +187,16 @@ hr{
   width: 100%;
   height: 22rem;
 }
+
+.boton-editar {
+  position:absolute;
+  transform: translate(-20%,-30%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+img {
+  width: 3rem; 
+  height: auto; 
+}
