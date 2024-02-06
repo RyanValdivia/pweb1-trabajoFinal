@@ -1,4 +1,4 @@
-const greetUser = document.querySelector('.user-placeholder');
+var ip = "13.59.127.71" || "localhost";
 greetUser.innerHTML = sessionStorage.getItem('userName');
 
 const prev = document.querySelector(".prev");

@@ -1,4 +1,4 @@
-const ip = "45.191.99.242" || "localhost";
+var ip = "13.59.127.71" || "localhost";
 
 let fixPath = "";
 
