@@ -135,7 +135,7 @@ h4{
   align-items: center;
 }
 .img-fondo-perfil {
-  background: url("./backgroundLibrosEstanteria.jpg") no-repeat;
+  background: url("../img/backgroundLibrosEstanteria.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
