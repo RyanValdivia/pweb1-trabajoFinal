@@ -11,7 +11,7 @@
                 const emailP = document.getElementById('email');
 
                 nombrep.textContent = username;
-                tagP.textContent = username;
+                tagP.textContent = "@" + username;
                 usernameP.textContent = username;
 
                 emailP.textContent = email;
