@@ -3,12 +3,10 @@
   padding: 0;
   margin: 0;
 }
-
 @font-face {
   font-family: "FontDePagina";
   src: url("../fonts/Gagalin-Regular.otf") format("opentype");
 }
-
 html,
 body {
   max-width: 100vw;
@@ -16,14 +14,12 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
-
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-size: cover;
 }
-
 main {
   width: 100vw;
   height: 100svh;
@@ -33,16 +29,12 @@ main {
   justify-content: center;
   padding: 0 20px 7vh;
 }
-
-
 p {
   margin-left: 50px;
   color: #ffffff;
   text-align: right;
   font-family: "FontDePagina";
-  letter-spacing: 2px;
 }
-
 .carrusel {
   display: flex;
   align-items: center;
@@ -50,7 +42,6 @@ p {
   width: 100%;
   height: 40%;
 }
-
 .slide {
   width: 100%;
   display: flex;
@@ -60,22 +51,18 @@ p {
   scroll-behavior:smooth;
   gap: 24px;
 }
-
 .slide::-webkit-scrollbar {
   width: 0; 
   border-radius: 20px;
 }
-
 .slide::-webkit-scrollbar-thumb {
   border-radius: 20px;
   background-color: transparent; 
 }
-
 .slide::-webkit-scrollbar-track {
   border-radius: 20px;
   background-color: transparent; 
 }
-
 .container {
   display: flex;
   justify-content: center;
@@ -84,11 +71,9 @@ p {
   background-position: center;
   transition: opacity 0.4s ease;
 }
-
 .container:hover {
   opacity: .8;
 }
-
 .background{
   height: 100%;
   width: 100%;
@@ -101,19 +86,16 @@ p {
   justify-content: space-between;
   align-items: center;
 }
-
 .background > img {
   height: 150px;
   box-shadow: 0 0 10px #000e;
 }
-
 .background > p {
   font-size: 1rem;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   text-align: left;
 }
-
 .control {
   width: 40px;
   height: 40px;
@@ -124,11 +106,9 @@ p {
   padding: 10px;
   filter: invert();
 }
-
 .control:hover {
   transform: scale(1.1);
 }
-
 .recomendados {
   display: flex;
   flex-direction: column;
@@ -141,25 +121,20 @@ h1 {
   font-size: 3rem;
   font-family: "FontDePagina", sans-serif;
 }
-
 h1 span {
   color: #8c52ff;
 }
-
 h2{
   font-family: "FontDePagina", sans-serif;
 }
-
 .cartelera img {
   height: 300px;
   box-shadow: 0 0 20px #000b;
   transition: transform 0.4s ease;
 }
-
 .cartelera img:hover {
   transform: scale(1.1);
 }
-
 .cartelera {
   display: flex;
   flex-wrap: wrap;
@@ -169,4 +144,46 @@ h2{
   height: 300px;
   width: 600px;
   width: 100%;
+}
+@media (max-width: 660px) {
+  main{
+    padding: 32px 8px;
+  }
+  .carrusel {
+    height: auto;
+  }
+  .cartelera {
+    gap: 20px;
+  }
+  .cartelera img {
+    height: 200px;
+  }
+  .slide{
+    height: 350px;
+    gap: 5px;
+  }
+  .background {
+    padding: 16px 24px;
+    min-width: 300px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .background > img {
+    height: 150px;
+  }
+  .background > p {
+    font-size: .8rem;
+    margin: 0;
+    text-align: center;
+  }
+  .control {
+    width: 30px;
+    height: 30px;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2{
+    font-size: 1.5rem;
+  }
 }
