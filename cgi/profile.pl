@@ -23,10 +23,8 @@ my $dbh = DBI->connect( "DBI:mysql:database=$dbName;host=$dbHost;port=3306",
 my $sth = $dbh->prepare("SELECT * FROM $dbTable WHERE id = ?");
 $sth->execute($id);
 
-my $result      = $sth->fetchall_arrayref( {} );
-my $json_result = to_json($result);
-
+my $result = $sth->fetchrow_hashref;
 print $cgi->header('application/json');
-print $json_result;
+print to_json($result);
 
 $dbh->disconnect;
