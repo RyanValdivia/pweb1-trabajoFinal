@@ -176,18 +176,31 @@ p{
 }
 
 @media screen and (max-width: 700px){
-    .perf-colaborador {
+    .logo-banner {
+        max-width: 300px;
+    }
+    .cartilla, .perf-colaborador {
         height: 200px;
         width: 200px;
         margin: 0;
+        border: 3px solid #4f21ab;
     }
     .column:hover .perf-colaborador{
-        transform: translateX(0%) scale(1);
+        transform: translateX(0%) scale(1.1);
     }
     .cartilla{
-        display: none;
+        border: 0px solid transparent;
+        border-radius: 50%;
+        background-color: transparent;
+        backdrop-filter: blur(8px) brightness(0.8);
+        padding: 16px;
     }
-    .row, .column{
+    .column:hover .cartilla{
+        transform: scale(1.1) translate(0%);
+        z-index: 1;
+    }
+    .row, .column, .column p{
         margin:0;
+        color: #fff;
     }
 }
