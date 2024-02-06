@@ -202,5 +202,6 @@ p{
     .row, .column, .column p{
         margin:0;
         color: #fff;
+        text-align: center;
     }
 }
