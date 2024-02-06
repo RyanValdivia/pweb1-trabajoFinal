@@ -1,3 +1,5 @@
+const ip = "45.191.99.242" || "localhost";
+
 let fixPath = "";
 
 if(window.location.pathname.split("/").length === 3){

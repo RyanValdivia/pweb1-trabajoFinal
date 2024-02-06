@@ -1,3 +1,5 @@
+
+
 const prev = document.querySelector(".prev");
 const slide = document.querySelector(".slide");
 const next = document.querySelector(".next");
