@@ -1,7 +1,3 @@
-require('dotenv').config();
-
-const apiTP = process.env.API_TP;
-
 const createLink = (libro) => {
   const title = libro.titulo;
   const autor = libro.autor;
@@ -12,7 +8,7 @@ const createLink = (libro) => {
 
 const obtenerLibros = async () => {
   try {
-    const response = await fetch("http://13.59.127.71:4500/obtener-imagenes");
+    const response = await fetch(`http://${ip}:4500/obtener-imagenes`);
     const data = await response.json();
     return data;
   } catch (error) {

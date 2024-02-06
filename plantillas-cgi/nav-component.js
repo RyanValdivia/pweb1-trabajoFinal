@@ -1,4 +1,3 @@
-// Este codigo toma de consideracion que la el html al que se le aplica el nav se encuentra en la direccion de ruta al proyecto, como soluciono esto? quiero que independientemente de donde se llame, las rutas relativas funcionen bien
 let fixPath = "";
 
 if(window.location.pathname.split("/").length === 3){
@@ -66,7 +65,7 @@ const sugerenciasContainer = document.getElementById("sugerencias");
 
 searchInput.addEventListener("input", function () {
   let searchQuery = searchInput.value;
-  fetch(`http://localhost:4500/search-books?search=${searchQuery}`)
+  fetch(`http://${ip}:4500/search-books?search=${searchQuery}`)
     .then((response) => response.json())
     .then((data) => {
       mostrarSugerencias(data);

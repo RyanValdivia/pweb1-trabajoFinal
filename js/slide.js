@@ -34,7 +34,7 @@ function createLink(libro){
 
 const obtenerLibros = async function () {
   try {
-    const response = await fetch("http://13.59.127.71:4500/obtener-imagenes");
+    const response = await fetch(`http://${ip}:4500/obtener-imagenes`);
     const data = await response.json();
     return data;
   } catch (error) {
