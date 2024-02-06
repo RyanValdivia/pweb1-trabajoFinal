@@ -48,7 +48,7 @@ let contentNav = /*html*/ `
           alt="user image"
           class="user-image"
         />
-        <a href=".././perfil.html"><span class="user-name">${userName}</span></a>
+        <a href=".././plantillas-cgi-perfil/perfil.html"><span class="user-name">${userName}</span></a>
       </div>
 `;
 

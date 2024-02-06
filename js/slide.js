@@ -1,4 +1,5 @@
-console.log(sessionStorage.getItem('userId') + " : " + sessionStorage.getItem('userName'));
+const greetUser = document.querySelector('.user-placeholder');
+greetUser.innerHTML = sessionStorage.getItem('userName');
 
 const prev = document.querySelector(".prev");
 const slide = document.querySelector(".slide");
