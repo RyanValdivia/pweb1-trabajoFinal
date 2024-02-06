@@ -12,7 +12,7 @@ fetch(`cgi/profile.pl?id=${sessionStorage.getItem("userId")}`)
     const emailP = document.getElementById("email");
     const passP = document.getElementById("password");
 
-    nombreP.textContent = username;
+    nombreP.innerHTML = username;
     tagP.textContent = "@" + username;
     usernameP.textContent = username;
     passP.textContent = pass;
