@@ -187,12 +187,23 @@ a {
   color: #000;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
+  font-size: 22px;
   text-align: center;
   margin: 0;
   letter-spacing: 0;
 }
 .modal-content > a > button{
   max-width: 170px;
+    font-size: 19px;
+    height: 55px;
+    width: 240px;
+    background-color: #7871db;
+    border: 2px solid #7871db;
+    border-radius: 100px;
+    color: #ffffff; 
+    font-weight: 700;
+    transition: background-color .4s, color .4s;
+    outline: none;
 }
 .close{
   position: absolute;
@@ -201,7 +212,7 @@ a {
   font-size: 30px;
   cursor: pointer;
   color: #8c52ff;
-  font-weight: bold;
+  font-weight: 900;
 }
 @media (max-width: 1100px){
   nav {
