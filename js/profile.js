@@ -5,12 +5,14 @@ fetch(`cgi/profile.pl?id=${sessionStorage.getItem("userId")}`)
     const username = data.username;
     const email = data.email;
     const pass = data.password;
+    const role = data.role;
 
     const nombreP = document.getElementById("nombre");
     const tagP = document.getElementById("tag");
     const usernameP = document.getElementById("userName");
     const emailP = document.getElementById("email");
     const passP = document.getElementById("password");
+    const crown = document.getElementById("crown");
 
     nombreP.textContent = username;
     tagP.textContent = "@" + username;
@@ -18,5 +20,11 @@ fetch(`cgi/profile.pl?id=${sessionStorage.getItem("userId")}`)
     passP.textContent = pass;
 
     emailP.textContent = email;
+
+    if (role === "admin") {
+      crown.style.display = "block";
+    } else {
+      crown.style.display = "none";
+    }
   })
   .catch((error) => console.error("Error:", error));
