@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
           var userId = data.user_id;
           sessionStorage.setItem("userId", userId);
           sessionStorage.setItem("userName", data.user_name);
-          sessionStorgae.setItem("role", data.role);
+          sessionStorage.setItem("role", data.role);
 
           window.location.href = "./home-page.html";
         } else {
