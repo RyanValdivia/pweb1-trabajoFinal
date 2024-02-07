@@ -1,4 +1,4 @@
-var ip = "13.59.127.71" || "localhost";
+var ip = "3.137.139.201" || "localhost";
 
 let fixPath = "";
 
