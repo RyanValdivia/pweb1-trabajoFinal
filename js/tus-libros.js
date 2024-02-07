@@ -1,6 +1,7 @@
 var ip = "localhost";
 
 var userId = localStorage.getItem("userId");
+const bookContainer = document.querySelector(".books-container");
 console.log("from tus libros: ", userId);
 
 const createLink = (libro) => {
@@ -16,7 +17,7 @@ function createBook(book) {
   bookElement.href = createLink(book);
   bookElement.className = 'book';
   bookImage = document.createElement('img');
-  bookImage.src = book.rutaDePortada;
+  bookImage.src = "./images_libros/" + book.rutaDePortada;
   bookElement.appendChild(bookImage);
   return bookElement;
 }
@@ -35,4 +36,10 @@ fetch(`http://${ip}:4500/obtener-libros-favoritos/${sessionStorage.getItem("user
   .then(response => response.json())
   .then(books => addBooks(books))
   .catch(error => console.error('Error al obtener libros favoritos:', error));
-/*Para agregar un libro a la lista de libros, se debe llamar a la función addBook con el libro que se quiere agregar.*/
+
+//agregame un alogica para poner un mensaje como "aun no tienes libros guardados" cuando bookContainer este vacio
+if (bookContainer.children.length === 0) {
+  const message = document.createElement('h1');
+  message.textContent = "Aún no tienes libros guardados";
+  bookContainer.appendChild(message);
+}
