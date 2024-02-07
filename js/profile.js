@@ -8,6 +8,9 @@ fetch(`cgi/profile.pl?id=${sessionStorage.getItem("userId")}`)
     const pass = data.password;
     const role = data.role;
 
+    console.log(role);
+    console.log(role === "admin");
+
     const nombreP = document.getElementById("nombre");
     const tagP = document.getElementById("tag");
     const usernameP = document.getElementById("userName");
