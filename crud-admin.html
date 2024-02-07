@@ -14,7 +14,7 @@
         <div class="disclaimer-content">
           <img src="../plantillas-cgi/admin.png" alt="User icon">
         </div>
-        <form action='cgi/crud.pl' method='POST' id="formRegister">
+        <form action='cgi/crud.pl' method='POST' id="formRegister" enctype="multipart/form-data">
           <div class="campos">
             <div class="campo">
               <input type="text" name="titulo" placeholder='Titulo' id='titulo' autocomplete="Campo Necesario" required>
@@ -35,7 +35,7 @@
             </div>
             <div class="campo">
               <label for="imagen">Subir Portada:</label>
-              <input type="file" id="portada" name="portada" accept="image/*" enctype="multipart/form-data"> 
+              <input type="file" id="portada" name="portada" accept="image/*"> 
             </div>
             
             <button>SUBIR LIBRO</button>
