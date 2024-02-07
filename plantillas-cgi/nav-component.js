@@ -36,7 +36,6 @@ let contentNav = /*html*/ `
           </div>
         </div>
         <ul class="links">
-          <li id="admin"><a href="${fixPath}./crud-admin.html">Añadir libros</li>
           <li><a href="${fixPath}./libros.html">Libros</a></li>
           <li><a href="${fixPath}./tus-libros.html">Tus libros</a></li>
           <li><a href="${fixPath}./Acerca.html">Acerca</a>
@@ -53,6 +52,7 @@ let contentNav = /*html*/ `
         <div class="dropdown">
           <a href="${fixPath}./index.html" class="drop-item" id="cerrar-sesion">Cerrar sesión</a>
           <a href="${fixPath}./perfil.html" class="drop-item">Ver perfil</a>
+          <a id="admin" href="${fixPath}./crud-admin.html" class="drop-item">Administrador</a>
         </div>
       </div>
   <div id="myModal" class="modal">
@@ -161,11 +161,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const dropdownTrigger = document.querySelector(".sesion");
 
   dropdownTrigger.addEventListener("click", function () {
-    dropdown.style.display = dropdown.style.display === "none" ? "flex" : "none";
+    dropdown.style.display =
+      dropdown.style.display === "none" ? "flex" : "none";
   });
 
   document.addEventListener("click", function (event) {
-    if (!dropdownTrigger.contains(event.target) && !dropdown.contains(event.target)) {
+    if (
+      !dropdownTrigger.contains(event.target) &&
+      !dropdown.contains(event.target)
+    ) {
       dropdown.style.display = "none";
     }
   });
@@ -176,32 +180,32 @@ cerrarSesion.addEventListener("click", function () {
   sessionStorage.clear("userId");
 });
 
-    function verificarSesion() {
-      if (sessionStorage.getItem("userId") == null) {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "block";
+function verificarSesion() {
+  if (sessionStorage.getItem("userId") == null) {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
 
-        var overlay = document.createElement("div");
-        overlay.style.position = "fixed";
-        overlay.style.top = "0";
-        overlay.style.left = "0";
-        overlay.style.width = "100%";
-        overlay.style.backdropFilter = "blur(5px)";
-        overlay.style.height = "100%";
-        overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
-        overlay.style.zIndex = "4";
-        modal.parentNode.insertBefore(overlay, modal);
-        overlay.addEventListener("click", function() {
-          cerrarModal();
-        });
-      }
-    }
+    var overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.backdropFilter = "blur(5px)";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
+    overlay.style.zIndex = "4";
+    modal.parentNode.insertBefore(overlay, modal);
+    overlay.addEventListener("click", function () {
+      cerrarModal();
+    });
+  }
+}
 
-    function cerrarModal() {
-      var modal = document.getElementById("myModal");
-      modal.style.display = "none";
+function cerrarModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
 
-      window.location.href = "/index.html";
-    }
+  window.location.href = "/index.html";
+}
 
-    window.addEventListener("load", verificarSesion);
+window.addEventListener("load", verificarSesion);
