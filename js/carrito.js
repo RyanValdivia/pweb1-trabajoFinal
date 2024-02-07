@@ -13,7 +13,6 @@ function agregarLibroFavorito(usuarioId, libroId) {
   .catch(error => console.error('Error al agregar libro favorito:', error));
 }
 
-const params = new URLSearchParams(window.location.search);
 const userId = sessionStorage.getItem('userId');
 const bookId = params.get('id');
 const button = document.getElementById("agregar-favoritos");
