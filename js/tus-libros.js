@@ -1,6 +1,7 @@
 var ip = "localhost";
 
 var userId = localStorage.getItem("userId");
+console.log("from tus libros: ", userId);
 
 const createLink = (libro) => {
   const title = libro.titulo;
@@ -30,7 +31,7 @@ function addBooks(books){
   books.forEach(addBook);
 }
 
-fetch(`http://${ip}:4500/obtener-libros-favoritos/${userId}`)
+fetch(`http://${ip}:4500/obtener-libros-favoritos/${sessionStorage.getItem("userId")}`)
   .then(response => response.json())
   .then(books => addBooks(books))
   .catch(error => console.error('Error al obtener libros favoritos:', error));
