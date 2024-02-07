@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: 'FontDePagina';
+  src: url('../fonts/Gagalin-Regular.otf') format('opentype');
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  height: 100svh;
+  flex-direction: column;
+}
+
+main{
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  padding: 1.25rem;
+}
+
+h1{
+  font: 3em 'FontDePagina', sans-serif;
+}
+
+.book{
+  height: 290px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+  transition: transform 0.5s;
+}
+
+.book:hover{
+  transform: scale(1.05);
+}
+
+.book > h2 {
+  color: #000;
+  font-size: 1em;
+}
+
+.book > img{
+  width: 180px;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.books-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 378px) {
+  main{
+    padding: 1.25rem;
+  }
+  .book > img, .book{
+    width: 150px;
+    height: 255px;
+  }
+}
