@@ -9,6 +9,7 @@
         <script src="js/mostrar.js" defer></script>
         <script src="./plantillas-cgi/nav-component.js" defer></script>
         <script src="./plantillas-cgi/footer-component.js"defer></script>
+        <script src="./js/carrito.js" defer></script>
     </head>
     <body>
         <nav class="nav-container">
@@ -35,7 +36,7 @@
                                     ENCONTRAR LIBRO
                                 </button>
                             </a>
-                            <button id="añadirLibro">
+                            <button id="agregarLibro" onclick="agregarLibroFavorito(userId, bookId)">
                                 AÑADIR FAVORITOS
                             </button>
                         </div>

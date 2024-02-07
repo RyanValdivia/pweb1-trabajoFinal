@@ -1,3 +1,6 @@
+var ip = "localhost";
+let userId = localStorage.getItem("userId");
+
 const createLink = (libro) => {
   const title = libro.titulo;
   const autor = libro.autor;
@@ -22,4 +25,12 @@ function addBook(book){
   bookContainer.appendChild(book);
 }
 
+function addBooks(books){
+  books.forEach(addBook);
+}
+
+fetch(`http://${ip}:4500/obtener-libros-favoritos/${userId}`)
+  .then(response => response.json())
+  .then(books => addBooks(books))
+  .catch(error => console.error('Error al obtener libros favoritos:', error));
 /*Para agregar un libro a la lista de libros, se debe llamar a la función addBook con el libro que se quiere agregar.*/

@@ -1,5 +1,6 @@
 // Obtener los parámetros de la URL y convertirlos de nuevo a un objeto
 const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
 const title = params.get('title');
 const desc = params.get('desc');
 const author = params.get('author');

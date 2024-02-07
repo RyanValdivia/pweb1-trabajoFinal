@@ -108,7 +108,7 @@ function mostrarSugerencias(sugerencias) {
 
     enlace.href =
       fixPath +
-      `/plantilla-cada-libro.html?title=${sugerencia.titulo}&desc=${sugerencia.descripcion}&author=${sugerencia.autor}&imgRoute=${sugerencia.rutaDePortada}`;
+      `/plantilla-cada-libro.html?title=${sugerencia.titulo}&desc=${sugerencia.descripcion}&author=${sugerencia.autor}&imgRoute=${sugerencia.rutaDePortada}&id=${sugerencia.id}`;
 
     sugerenciasContainer.appendChild(enlace);
   });

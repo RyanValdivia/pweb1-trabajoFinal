@@ -28,13 +28,14 @@ next.addEventListener("click", () => {
   slide.scrollLeft += 300;
 });
 
-function createLink(libro){
-  let title = libro.titulo;
-  let autor = libro.autor;
-  let desc = libro.descripcion;
-  let imgRoute = libro.rutaDePortada;
-  return `./plantilla-cada-libro.html?title=${title}&desc=${desc}&author=${autor}&imgRoute=${imgRoute}`;
-}
+const createLink = (libro) => {
+  const id = libro.id;
+  const title = libro.titulo;
+  const autor = libro.autor;
+  const desc = libro.descripcion;
+  const imgRoute = libro.rutaDePortada;
+  return `./plantilla-cada-libro.html?title=${title}&author=${autor}&desc=${desc}&imgRoute=${imgRoute}&id=${id}`;
+};
 
 const obtenerLibros = async function () {
   try {

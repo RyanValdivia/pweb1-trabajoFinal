@@ -1,11 +1,12 @@
 var ip = "13.59.127.71" || "localhost";
 
 const createLink = (libro) => {
+  const id = libro.id;
   const title = libro.titulo;
   const autor = libro.autor;
   const desc = libro.descripcion;
   const imgRoute = libro.rutaDePortada;
-  return `./plantilla-cada-libro.html?title=${title}&author=${autor}&desc=${desc}&imgRoute=${imgRoute}`;
+  return `./plantilla-cada-libro.html?title=${title}&author=${autor}&desc=${desc}&imgRoute=${imgRoute}&id=${id}`;
 };
 
 const obtenerLibros = async () => {

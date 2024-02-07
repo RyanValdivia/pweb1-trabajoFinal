@@ -79,6 +79,49 @@ function obtenerMejoresSugerencias(terminoBusqueda, libros) {
     return mejoresSugerencias;
 }
 
+/*API para obtener los libros favoritos de un usuario por la ID*/
+app.get("/obtener-libros-favoritos/:usuarioId", (req, res) => {
+  const usuarioId = req.params.usuarioId;
+  const query = `
+    SELECT libros.*
+    FROM libros
+    INNER JOIN usuarios_libros_favoritos ON libros.id = usuarios_libros_favoritos.libro_id
+    WHERE usuarios_libros_favoritos.usuario_id = ?;
+  `;
+
+  connection.query(query, [usuarioId], (err, resultados) => {
+    if (err) {
+      console.error("Error al obtener libros favoritos:", err);
+      res.status(500).json({ error: "Error al obtener libros favoritos" });
+    } else {
+      res.json(resultados);
+    }
+  });
+});
+
+/*API para agregar un libro a los favoritos de un usuario*/
+app.post("/agregar-libro-favorito", (req, res) => {
+  const { usuarioId, libroId } = req.body;
+
+  if (!usuarioId || !libroId) {
+    res.status(400).json({ error: "Se requieren los parámetros 'usuarioId' y 'libroId'" });
+    return;
+  }
+
+  const query = "INSERT INTO usuarios_libros_favoritos (usuario_id, libro_id) VALUES (?, ?)";
+
+  connection.query(query, [usuarioId, libroId], (err, resultados) => {
+    if (err) {
+      console.error("Error al agregar libro favorito:", err);
+      res.status(500).json({ error: "Error al agregar libro favorito" });
+    } else {
+      res.json({ mensaje: "Libro agregado a favoritos correctamente" });
+    }
+  });
+});
+
+
+
 app.listen(port, () => {
   console.log(`Servidor Node.js en ejecución en http://localhost:${port}`);
 });
