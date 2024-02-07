@@ -61,7 +61,7 @@ h2 {
 
 .background {
   height: 100%;
-  width: 100%;
+  width: 100%;z
   backdrop-filter: blur(9px) brightness(.75);
   padding: 16px 32px;
   min-width: 500px;
@@ -190,7 +190,7 @@ hr{
 
 .boton-editar {
   position:absolute;
-  transform: translate(-20%,-30%);
+  transform: translate(-20%,-20%);
   background: none;
   border: none;
   padding: 0;

@@ -27,14 +27,21 @@
             <div class="campo">
               <input type="text" name="genLiterario"  placeholder="Género Literario" id='generoLiterario' autocomplete='Campo Necesario' required>
             </div>
+          
+          
             <div class="campo">
               <input type="text" name="rutaPort" placeholder="Ruta de Portada" id='rutaDePortada' autocomplete='Campo Necesario' required>
             </div>
             <div class="campo">
-              <input type="text" name="descripcion"  placeholder="Descripción" id='descripcion' autocomplete='Campo Necesario' required>
+              <textarea name="descripcion" placeholder="Descripción" id='descripcion' autocomplete='Campo Necesario' required></textarea>
             </div>
+            <div class="campo">
+              <label for="imagen">Subir Portada:</label>
+              <input type="file" id="imagen" name="imagen" accept="image/*" > 
+            </div>
+            
+            <button>SUBIR LIBRO</button>
           </div>
-          <button>SUBIR LIBRO</button>
         </form>
         <div class="call-action">
           <p class='login'>¿Deseas regresar? <a href="index.html" class='login-link'>Presiona aqui</a></p>
