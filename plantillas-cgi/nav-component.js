@@ -2,7 +2,7 @@ var ip = "13.59.127.71" || "localhost";
 
 let fixPath = "";
 
-if(window.location.pathname.split("/").length === 3){
+if (window.location.pathname.split("/").length === 3) {
   fixPath = ".";
 }
 
@@ -36,6 +36,7 @@ let contentNav = /*html*/ `
           </div>
         </div>
         <ul class="links">
+          <li id="admin"><a href="${fixPath}./crud-admin.html">Añadir libros</li>
           <li><a href="${fixPath}./libros.html">Libros</a></li>
           <li><a href="#">Tus libros</a></li>
           <li><a href="${fixPath}./Acerca.html">Acerca</a>
@@ -105,7 +106,9 @@ function mostrarSugerencias(sugerencias) {
     enlace.appendChild(img);
     enlace.appendChild(titulo);
 
-    enlace.href = fixPath + `/plantilla-cada-libro.html?title=${sugerencia.titulo}&desc=${sugerencia.descripcion}&author=${sugerencia.autor}&imgRoute=${sugerencia.rutaDePortada}`;
+    enlace.href =
+      fixPath +
+      `/plantilla-cada-libro.html?title=${sugerencia.titulo}&desc=${sugerencia.descripcion}&author=${sugerencia.autor}&imgRoute=${sugerencia.rutaDePortada}`;
 
     sugerenciasContainer.appendChild(enlace);
   });
@@ -119,11 +122,11 @@ function mostrarSugerencias(sugerencias) {
 let sticky;
 const nav = document.querySelector("nav");
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   sticky = nav.offsetTop;
 });
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
   if (window.scrollY > sticky) {
     nav.classList.add("sticky");
   } else {
@@ -131,3 +134,12 @@ window.addEventListener("scroll", function() {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const admin = document.getElementById("admin");
+
+  if (sessionStorage.getItem("role") === "admin") {
+    admin.style.display = "block";
+  } else {
+    admin.style.display = "none";
+  }
+});
