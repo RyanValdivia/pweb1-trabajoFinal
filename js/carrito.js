@@ -1,3 +1,5 @@
+var ip;
+
 function agregarLibroFavorito(usuarioId, libroId) {
   fetch(`http://${ip}:4500/agregar-libro-favorito`, {
     method: 'POST',
