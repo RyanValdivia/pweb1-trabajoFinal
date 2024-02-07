@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: url(./plantillas-cgi/background.jpg);
+  background: url(../plantillas-cgi/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
