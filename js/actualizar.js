@@ -45,7 +45,7 @@ function convertirASpanAInput(campoId) {
       console.log(nuevoValor);
       // Enviar los datos actualizados al servidor (aquí se debe implementar el envío a través de fetch)
       fetch(
-        `cgi/profile.pl?id=${sessionStorage.getItem(
+        `cgi/actualizar.pl?id=${sessionStorage.getItem(
           "userId"
         )}&campo=${campoId}&valor=${nuevoValor}`
       )
