@@ -102,6 +102,7 @@ app.get("/obtener-libros-favoritos/:usuarioId", (req, res) => {
 /*API para agregar un libro a los favoritos de un usuario*/
 app.post("/agregar-libro-favorito", (req, res) => {
   const { usuarioId, libroId } = req.body;
+  console.log("from api:", "usuarioId", usuarioId, "\tlibroId", libroId);
 
   if (!usuarioId || !libroId) {
     res.status(400).json({ error: "Se requieren los parámetros 'usuarioId' y 'libroId'" });
