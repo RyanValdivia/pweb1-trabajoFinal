@@ -43,9 +43,9 @@ function convertirASpanAInput(campoId) {
 
     if (nuevoValor !== "" && nuevoValor !== valorOriginal) {
       console.log(nuevoValor);
-      /*/ Enviar los datos actualizados al servidor (aquí se debe implementar el envío a través de fetch)
+      // Enviar los datos actualizados al servidor (aquí se debe implementar el envío a través de fetch)
       fetch(
-        `cgi/update_profile.pl?id=${sessionStorage.getItem(
+        `cgi/profile.pl?id=${sessionStorage.getItem(
           "userId"
         )}&campo=${campoId}&valor=${nuevoValor}`
       )
@@ -54,7 +54,7 @@ function convertirASpanAInput(campoId) {
           // Manejar la respuesta del servidor si es necesario
           console.log(data);
         })
-        .catch((error) => console.error("Error:", error));*/
+        .catch((error) => console.error("Error:", error));
     }
   });
 }
