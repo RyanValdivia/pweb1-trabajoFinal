@@ -136,6 +136,8 @@ window.addEventListener("scroll", function () {
 
 const admin = document.getElementById("admin");
 console.log(sessionStorage.getItem("role"));
+console.log(sessionStorage.getItem("userId"));
+console.log(sessionStorage.getItem("userName"));
 
 if (sessionStorage.getItem("role") === "admin") {
   admin.style.display = "block";
