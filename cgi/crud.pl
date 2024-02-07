@@ -24,7 +24,7 @@ my $author      = $cgi->param("autor");
 my $gendre      = $cgi->param("genLiterario");
 my $description = $cgi->param("descripcion");
 
-my $directorio_destino = "/var/www/html/images-libros";
+my $directorio_destino = "/var/www/html/images_libros";
 my $archivo            = $cgi->upload('portada');
 
 my $sth = $dbh->prepare("SELECT * FROM $dbTable WHERE titulo = ?");
