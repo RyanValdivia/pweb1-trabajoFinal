@@ -70,9 +70,9 @@ if ($res) {
 }
 else {
     $sth = $dbh->prepare(
-"INSERT INTO $dbTable (autor, generoLiterario, descripcion, rutaDePortada) VALUES (?, ?, ?, ?)"
+"INSERT INTO $dbTable (title, autor, generoLiterario, descripcion, rutaDePortada) VALUES (?, ?, ?, ?, ?)"
     );
-    $sth->execute( $author, $gendre, $description, $nombre_archivo );
+    $sth->execute( $title, $author, $gendre, $description, $nombre_archivo );
 
     my $response =
       { success => 1, message => "El libro se ha subido exitosamente." };
