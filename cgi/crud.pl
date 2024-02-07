@@ -70,7 +70,7 @@ if ($res) {
 }
 else {
     $sth = $dbh->prepare(
-"INSERT INTO $dbTable (title, autor, generoLiterario, descripcion, rutaDePortada) VALUES (?, ?, ?, ?, ?)"
+"INSERT INTO $dbTable (titulo, autor, generoLiterario, descripcion, rutaDePortada) VALUES (?, ?, ?, ?, ?)"
     );
     $sth->execute( $title, $author, $gendre, $description, $nombre_archivo );
 
