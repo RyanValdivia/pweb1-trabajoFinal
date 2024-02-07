@@ -34,12 +34,12 @@ function addBooks(books){
 
 fetch(`http://${ip}:4500/obtener-libros-favoritos/${sessionStorage.getItem("userId")}`)
   .then(response => response.json())
-  .then(books => addBooks(books))
+  .then(books => {
+    addBooks(books);
+    if (bookContainer.children.length === 0) {
+      const message = document.createElement('h2');
+      message.textContent = "Aún no tienes libros guardados";
+      bookContainer.appendChild(message);
+    }
+  })
   .catch(error => console.error('Error al obtener libros favoritos:', error));
-
-//agregame un alogica para poner un mensaje como "aun no tienes libros guardados" cuando bookContainer este vacio
-if (bookContainer.children.length === 0) {
-  const message = document.createElement('h1');
-  message.textContent = "Aún no tienes libros guardados";
-  bookContainer.appendChild(message);
-}
