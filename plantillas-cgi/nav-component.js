@@ -135,6 +135,7 @@ window.addEventListener("scroll", function () {
 });
 
 const admin = document.getElementById("admin");
+console.log(sessionStorage.getItem("role"));
 
 if (sessionStorage.getItem("role") === "admin") {
   admin.style.display = "block";
