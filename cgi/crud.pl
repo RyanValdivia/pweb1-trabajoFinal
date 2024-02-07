@@ -34,6 +34,7 @@ my $res = $sth->fetchrow_array();
 $sth = $dbh->prepare("SELECT id FROM $dbTable ORDER BY id DESC LIMIT 1");
 $sth->execute();
 my $id = $sth->fetchrow_array();
+$id = $id + 1;
 
 my $nombre_archivo = "$id" . "_" . "$title" . ".jpg";
 
