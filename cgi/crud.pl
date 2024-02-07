@@ -8,8 +8,8 @@ use utf8;
 use JSON;
 
 my $dbName  = "biblioteca";
-my $dbUser  = "root";
-my $dbPass  = "";
+my $dbUser  = "manzana";
+my $dbPass  = "1604";
 my $dbHost  = "localhost";
 my $dbTable = "libros";
 
@@ -19,36 +19,64 @@ my $dbh = DBI->connect( "DBI:mysql:database=$dbName;host=$dbHost;port=3306",
     $dbUser, $dbPass )
   or die "No se pudo conectar $DBI::errstr";
 
-my $title       = $cgi->param("title");
-my $description = $cgi->param("desc");
-my $author      = $cgi->param("author");
-my $gendre      = $cgi->param("gendre");
+my $title       = $cgi->param("titulo");
+my $author      = $cgi->param("autor");
+my $gendre      = $cgi->param("genLiterario");
+my $description = $cgi->param("descripcion");
 
-my $check_sql = "SELECT COUNT(*) FROM $dbTable WHERE tiulo = ?";
-my $check_sth = $dbh->prepare($check_sql);
-$check_sth->execute($title) or die $check_sth->errstr;
+my $directorio_destino = "/var/www/html/images-libros";
+my $archivo            = $cgi->upload('portada');
 
-my ($existing_books) = $check_sth->fetchrow_array;
+my $sth = $dbh->prepare("SELECT * FROM $dbTable WHERE titulo = ?");
+$sth->execute($title);
+my $res = $sth->fetchrow_array();
 
-if ( $existing_books > 0 ) {
+$sth = $dbh->prepare("SELECT id FROM $dbTable ORDER BY id DESC LIMIT 1");
+$sth->execute();
+my $id = $sth->fetchrow_array();
 
-    # Ya existe un usuario con el mismo nombre de usuario o correo
-    my $response = {
-        success => 0,
-        message => "Ya existe un usuario con ese nombre de usuario o correo"
-    };
-    my $json_response = to_json($response);
-    print $cgi->header('application/json');
-    print $json_response;
-    exit;
+my $nombre_archivo = "$id" . "_" . "$title" . ".jpg";
+
+if ($archivo) {
+    my $ruta_destino = "$directorio_destino/$nombre_archivo";
+    open my $fh, '>', $ruta_destino or die "No se pudo abrir el archivo: $!";
+    while ( my $bytes = $archivo->getline() ) {
+        print $fh $bytes;
+    }
+    close $fh;
+    my $response =
+      { success => 1, message => "El archivo se ha subido exitosamente." };
+    print $cgi->header( -type => 'application/json' );
+    print encode_json($response);
+}
+else {
+    my $response =
+      { success => 0, message => "No se ha recibido ningún archivo." };
+    print $cgi->header( -type => 'application/json' );
+    print encode_json($response);
+}
+
+if ($res) {
+    $sth = $dbh->prepare(
+"UPDATE $dbTable SET autor =?, generoLiterario =?, descripcion =?, rutaDePortada = ? WHERE titulo =?"
+    );
+    $sth->execute( $author, $gendre, $description, $nombre_archivo, $title );
+
+    my $response =
+      { success => 1, message => "El libro se ha actualizado exitosamente." };
+    print $cgi->header( -type => 'application/json' );
+    print encode_json($response);
 
 }
 else {
-    my $sql = "INSERT INTO $dbTable (titulo, autor) VALUES (?, ?, ?)";
-    my $sth = $dbh->prepare($sql);
-    $sth->execute() or die $sth->errstr;
-    my $response      = { success => 1, message => "Registro exitoso" };
-    my $json_response = to_json($response);
-    print $cgi->header('application/json');
-    print $json_response;
+    $sth = $dbh->prepare(
+"INSERT INTO $dbTable (autor, generoLiterario, descripcion, rutaDePortada) VALUES (?, ?, ?, ?)"
+    );
+    $sth->execute( $author, $gendre, $description, $nombre_archivo );
+
+    my $response =
+      { success => 1, message => "El libro se ha subido exitosamente." };
+    print $cgi->header( -type => 'application/json' );
+    print encode_json($response);
 }
+
