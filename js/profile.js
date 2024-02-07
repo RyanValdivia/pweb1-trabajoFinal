@@ -1,6 +1,7 @@
 fetch(`cgi/profile.pl?id=${sessionStorage.getItem("userId")}`)
   .then((response) => response.json())
   .then((data) => {
+    console.log(data);
     // Manipular los datos recibidos
     const username = data.username;
     const email = data.email;
