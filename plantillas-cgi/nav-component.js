@@ -134,12 +134,10 @@ window.addEventListener("scroll", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const admin = document.getElementById("admin");
+const admin = document.getElementById("admin");
 
-  if (sessionStorage.getItem("role") === "admin") {
-    admin.style.display = "block";
-  } else {
-    admin.style.display = "none";
-  }
-});
+if (sessionStorage.getItem("role") === "admin") {
+  admin.style.display = "block";
+} else {
+  admin.style.display = "none";
+}
