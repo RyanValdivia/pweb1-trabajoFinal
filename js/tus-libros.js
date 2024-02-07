@@ -1,6 +1,6 @@
 var ip = "localhost";
 
-let userId = localStorage.getItem("userId");
+var userId = localStorage.getItem("userId");
 
 const createLink = (libro) => {
   const title = libro.titulo;
@@ -20,9 +20,9 @@ function createBook(book) {
   return bookElement;
 }
 
-function addBook(book){
+function addBook(bookF){
   const bookContainer = document.querySelector(".books-container");
-  const book = createBook(book);
+  const book = createBook(bookF);
   bookContainer.appendChild(book);
 }
 
