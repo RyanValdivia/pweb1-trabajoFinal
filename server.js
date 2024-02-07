@@ -4,6 +4,8 @@ const mysql = require("mysql");
 const app = express();
 const port = 4500;
 
+app.use(express.json());
+
 const connection = mysql.createConnection({
   host: "localhost",
   user: "manzana",
@@ -101,7 +103,8 @@ app.get("/obtener-libros-favoritos/:usuarioId", (req, res) => {
 
 /*API para agregar un libro a los favoritos de un usuario*/
 app.post("/agregar-libro-favorito", (req, res) => {
-  const { usuarioId, libroId } = req.body;
+  const usuarioId = req.body.usuarioId;
+  const libroId = req.body.libroId;
   console.log("from api:", "usuarioId", usuarioId, "\tlibroId", libroId);
 
   if (!usuarioId || !libroId) {

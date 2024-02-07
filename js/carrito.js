@@ -16,8 +16,8 @@ function agregarLibroFavorito(usuarioId, libroId) {
 const userId = sessionStorage.getItem('userId');
 const bookId = params.get('id');
 const button = document.getElementById("agregar-favoritos");
-console.log(userId, bookId);
 button.addEventListener("click", () => {
   agregarLibroFavorito(userId, bookId);
+  console.log("datos enviados: ",userId, bookId);
   alert("Libro agregado a favoritos");
 });
