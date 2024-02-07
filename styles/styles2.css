@@ -4,62 +4,48 @@
     margin: 0;
     font-family: "Open Sans", "Poppins", sans-serif;
 }
-
 @font-face {
   font-family: 'FontDePagina';
   src: url('../fonts/Gagalin-Regular.otf') format('opentype');
 }
-
 html, body {
     max-width: 100vw;
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
 }
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: space-between;
-    background-size: cover;
-}
-
 h3, p{
-    margin-left: 50px;
     color: #ffffff;
     text-align: right;
     font-family: 'FontDePagina';
-  }
+}
 h3{
-  font-size: 45px;
+  font-size: 2.8rem;
 }
 p{
-  font-size: 32px;
+  font-size: 2rem;
 }
-
 .banner {
     display: flex;
-    height: calc(100svh - 80px);
+    height: calc(100svh - 65px);
     background: url("../images_icons_background/bckround3.jpg") no-repeat;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+    padding: 85px 0;
 }
-
-.frase,
-.contenedor-logo {
-    flex: 1;
+.contenedor-logo{
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
 }
-
 .frase {
     color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 700px;
+    width: 90vw;
 }
 
 .frase > p {
@@ -68,12 +54,10 @@ p{
 }
 
 .logo-banner {
-    width: 500px;
+    max-width: 400px;
+    width: 90vw;
 }
 
-.contenedor-logo {
-    width: 50%; /* Ajusta según la proporción deseada */
-}
 .resaltado{
     color: #8C52FF;
     font-family: 'FontDePagina';
@@ -102,6 +86,7 @@ p{
     justify-content: center;
     margin-top: 25px;
     margin-bottom: 50px;
+    flex-wrap: wrap;
 }
 .column{
     position: relative;
@@ -176,4 +161,47 @@ p{
 .column:hover .cartilla {
     border: solid #3f1593;
     transform: translateX(38%);
+}
+.contenedor-colaboradores{
+    padding: 24px;
+}
+
+@media screen and (max-width: 1100px) {
+    :root{
+        font-size: 14px;
+    }
+    .frase h3, .frase p{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .logo-banner {
+        max-width: 300px;
+    }
+    .cartilla, .perf-colaborador {
+        height: 200px;
+        width: 200px;
+        margin: 0;
+        border: 3px solid #4f21ab;
+    }
+    .column:hover .perf-colaborador{
+        transform: translateX(0%) scale(1.1);
+    }
+    .cartilla{
+        border: 0px solid transparent;
+        border-radius: 50%;
+        background-color: transparent;
+        backdrop-filter: blur(8px) brightness(0.8);
+        padding: 16px;
+    }
+    .column:hover .cartilla{
+        transform: scale(1.1) translate(0%);
+        z-index: 1;
+    }
+    .row, .column, .column p{
+        margin:0;
+        color: #fff;
+        text-align: center;
+    }
 }

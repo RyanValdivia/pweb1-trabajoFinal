@@ -3,12 +3,10 @@
     padding: 0;
     margin: 0;
 }
-
 @font-face {
   font-family: 'FontDePagina';
   src: url('../fonts/Gagalin-Regular.otf') format('opentype');
 }
-
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -16,13 +14,11 @@ body {
 }
 main{
     background: radial-gradient(#fff, #eee);
-    padding: 2rem;
+    padding: 2rem 0;
 }
-
 .principal {
   text-align: center;
 }
-
 .catalogo-container {
   display: flex;
   flex-wrap: wrap;
@@ -30,7 +26,6 @@ main{
   gap: 40px;
   justify-content: space-evenly;
 }
-
 h1, h2{
     letter-spacing: 2px;
 }
@@ -126,3 +121,24 @@ h1 span {
     font-weight: 600;
 }
 
+
+@media (max-width: 660px) {
+  .background {
+    flex-direction: column;
+    gap: 16px;
+    padding: 30px 0;
+    min-width: 200px;
+  }
+  .background > img {
+    height: 150px;
+  }
+  .background > div {
+    width: 85%;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+}
