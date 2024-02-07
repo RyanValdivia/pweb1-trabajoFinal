@@ -38,7 +38,7 @@ let contentNav = /*html*/ `
         <ul class="links">
           <li id="admin"><a href="${fixPath}./crud-admin.html">Añadir libros</li>
           <li><a href="${fixPath}./libros.html">Libros</a></li>
-          <li><a href="#">Tus libros</a></li>
+          <li><a href="${fixPath}./tus-libros.html">Tus libros</a></li>
           <li><a href="${fixPath}./Acerca.html">Acerca</a>
           </li>
         </ul>
