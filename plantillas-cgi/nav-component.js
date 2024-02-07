@@ -49,8 +49,19 @@ let contentNav = /*html*/ `
           alt="user image"
           class="user-image"
         />
-        <a href="${fixPath}./perfil.html"><span class="user-name">${userName}</span></a>
+        <span class="user-name">${userName}</span>
+        <div class="dropdown">
+          <a href="${fixPath}./index.html" class="drop-item" id="cerrar-sesion">Cerrar sesión</a>
+          <a href="${fixPath}./perfil.html" class="drop-item">Ver perfil</a>
+        </div>
       </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <p>Para continuar, tienes que iniciar sesión</p>
+      <a href="/index.html"><button>Iniciar sesion</button></a>
+    </div>
+  </div>
 `;
 
 let navContainer = document.querySelector(".nav-container");
@@ -144,3 +155,53 @@ if (sessionStorage.getItem("role") === "admin") {
 } else {
   admin.style.display = "none";
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdown = document.querySelector(".dropdown");
+  const dropdownTrigger = document.querySelector(".sesion");
+
+  dropdownTrigger.addEventListener("click", function () {
+    dropdown.style.display = dropdown.style.display === "none" ? "flex" : "none";
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!dropdownTrigger.contains(event.target) && !dropdown.contains(event.target)) {
+      dropdown.style.display = "none";
+    }
+  });
+});
+
+const cerrarSesion = document.getElementById("cerrar-sesion");
+cerrarSesion.addEventListener("click", function () {
+  sessionStorage.clear("userId");
+});
+
+    function verificarSesion() {
+      if (sessionStorage.getItem("userId") == null) {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+
+        var overlay = document.createElement("div");
+        overlay.style.position = "fixed";
+        overlay.style.top = "0";
+        overlay.style.left = "0";
+        overlay.style.width = "100%";
+        overlay.style.backdropFilter = "blur(5px)";
+        overlay.style.height = "100%";
+        overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
+        overlay.style.zIndex = "4";
+        modal.parentNode.insertBefore(overlay, modal);
+        overlay.addEventListener("click", function() {
+          cerrarModal();
+        });
+      }
+    }
+
+    function cerrarModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+
+      window.location.href = "/index.html";
+    }
+
+    window.addEventListener("load", verificarSesion);
